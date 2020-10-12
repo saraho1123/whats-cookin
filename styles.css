@@ -5,6 +5,7 @@ html {
 body {
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
+  background: #EFEEEC;
 }
 
 nav {
@@ -17,7 +18,20 @@ nav {
   top: 0;
   width: 100%;
 }
-.form-titles{
+
+.greeting {
+  margin-left: 1em;
+  width: 60%;
+}
+
+.forms {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+}
+
+.form-titles {
 
 }
 
@@ -25,8 +39,14 @@ input {
   margin: 1em
 }
 
-.whats-cooking-logo {
+header {
+  display: flex;
+  justify-content: center;
+}
 
+.whats-cooking-logo {
+  width: 40vw;
+  margin: 5.5em;
 }
 
 

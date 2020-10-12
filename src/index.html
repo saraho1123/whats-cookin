@@ -9,19 +9,23 @@
   <body>
 
     <nav>
-      <h3 class="form-titles">Filter</h3>
-      <form action="filter by tag or type">
-        <input type="text">
-        
-      </form>
-      <h3 class="form-titles">Search</h3>
-      <form action="search by ingredient">
-        <input type="text">
-      </form>
+      <div class="greeting">
+        <h1>Howdy <span>Olga and Sarah!</span> What do you want to cook today?</h1>
+      </div>
+      <div class="forms">
+        <label class="form-titles" for="filter">Filter:</label>
+        <form action="filter by tag or type">
+          <input type="text">
+        </form>
+        <label class="form-titles" for="search">Search:</label>
+        <form action="search by ingredient">
+         <input type="text">
+        </form>
+      </div>
     </nav>
       
     <header>
-      <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png">
+        <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png">
     </header>
     <main>
       <article class="all-recipes">
@@ -38,8 +42,8 @@
         </section>
       </article>
 
-      <article class="single-recipe">
-        <img src="../images/Whats-Cooking-Logo.png" alt="What's Cooking title">
+      <article class="single-recipe hidden">
+        <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png" alt="What's Cooking title">
         <img src="../images/Creamy-Mushroom-Grits.jpg" alt="Current Chosen Recipe">
         <h1>Recipe Title</h1>
         <section>
