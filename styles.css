@@ -49,6 +49,41 @@ header {
   margin: 5.5em;
 }
 
+.all-recipes {
+ display: flex;
+ justify-content: space-around;
+ flex-wrap: wrap;
+}
+
+.recipe-card {
+  align-items: center;
+  border: #A23939 3px solid;;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2em;
+  width: 24%;
+  border-radius: 15px;
+  
+}
+
+.recipe-card-img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;;
+}
+
+
+
+@media (max-width: 400px) {
+  .all-recipes {
+    display: block;
+    .recipe-card {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
 
 
 
