@@ -5,6 +5,7 @@ const recipeCards = require('../data/test-data');
 const prototypeRecipes = recipeCards.sampleRecipes;
 const Recipe = require('../src/Recipe');
 
+//TODO sad path with data types
 describe('Recipe', () => {
   let recipe1;
 
