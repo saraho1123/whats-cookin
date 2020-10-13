@@ -1,4 +1,4 @@
-class Ingridient {
+class  Ingredient{
   constructor(id = 0, name = 'unknown', estimatedCostInCents = 0) {
     this.id = id,
     this.name = name,
@@ -6,4 +6,4 @@ class Ingridient {
   }
 }
 
-module.exports = Ingridient;
+module.exports = Ingredient;

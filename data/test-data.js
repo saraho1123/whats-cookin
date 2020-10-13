@@ -86,7 +86,7 @@ const sampleRecipes = [{
   }
 ];
 
-const sampleIngridients = [{
+const sampleIngredients = [{
     "id": 1,
     "name": "pumpkin",
     "estimatedCostInCents": 142
@@ -159,6 +159,6 @@ let sampleUsers = [
 
 module.exports = {
   sampleRecipes,
-  sampleIngridients,
+  sampleIngredients,
   sampleUsers
 }
