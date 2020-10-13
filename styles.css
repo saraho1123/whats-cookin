@@ -1,11 +1,21 @@
 html {
   margin: 0;
+  height: 100%;
 }
 
 body {
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
   background: #EFEEEC;
+  height: 100%;
+}
+
+header {
+  height: 30%;
+}
+
+main {
+  height: 70%;
 }
 
 h1 {
@@ -15,12 +25,6 @@ h1 {
 
 h2 {
   font-size: 2em;
-}
-
-@media only screen and (max-width: 1200px) {
-  h2 {
-    font-size: 1em;
-  }
 }
 
 nav {
@@ -81,8 +85,9 @@ header {
 }
 
 .whats-cooking-logo {
-  width: 40vw;
-  margin-top: 4.7em;
+  width: 18em;
+  height: 7em;
+  margin-top: 5em;
   margin-bottom: 2em;
 }
 
@@ -109,6 +114,7 @@ header {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: 100%;
 }
 
 .recipe-card-img {
@@ -162,11 +168,9 @@ img.heart-icon:hover {
 
 .recipe-details {
   display: flex;
-  justify-content: space-around;
-  width: 96%;
-  margin-left: 2%;
-  margin-right: 2%;
+  width: 100%;
 }
+
 
 h3 {
   font-size: 2em;
@@ -174,18 +178,43 @@ h3 {
 
 ul {
   list-style-type: none;
+  margin: 0em;
+  padding: 0em;
+}
+
+ol {
+  padding: 0px 0em 0em 0.7em;
+  margin: 0;
 }
 
 li {
   font-size: 1.2em;
 }
 
+#recipe-title {
+  margin: 2em 0em;
+}
+.recipe-info-box {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 .ingredients-section {
-  width: 40%;
+  background-color: #A23939;
+  padding: 1em 0em 1em 2em;
+  color: white;
+  width: 50%;
 }
 
 .directions-section {
-  width: 60%;
+  padding: 0em 0em 1em 2em;
+  border-width: 1em 1em 0em 1em;
+  border-style: solid;
+  border-color: #A23939;
+  background-color: white;
+  width: 50%;
 }
 
 .pantry {
@@ -212,12 +241,20 @@ li {
   h1 {
     font-size: 0.8em;
   }
+  h2 {
+    font-size: 0.75em;
+  }
+  h3 {
+    font-size: 0.65em;
+  }
   .forms {
     flex-direction: column;
     align-items: flex-end;
     font-size: 0.8em;
   }
   .whats-cooking-logo {
+    width: 13em;
+    height: 5em;
     margin-top: 5.7em;
   }
   .recipe-card {
@@ -233,6 +270,12 @@ li {
   }
   #nav-buttons {
     margin: 0em 1em 0em 1em;
+  }
+  .single-recipe-img {
+    width: 71%;
+  }
+  li{
+    font-size: 0.65em;
   }
 }
 

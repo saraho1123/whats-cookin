@@ -37,7 +37,7 @@
     </header>
 
     <main>
-      <article class="all-recipes">
+      <article class="all-recipes hidden">
         <section class = "recipe-card">
           <div class="icon-box">
             <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
@@ -98,33 +98,38 @@
       <article class="single-recipe hidden">
         <!-- <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png" alt="What's Cooking title"> -->
         <img class="single-recipe-img" src="https://spoonacular.com/recipeImages/678353-556x370.jpg" alt="Current Chosen Recipe">
-        <h2>Recipe Title</h2>
-        <div class="recipe-details">
-          <section class="ingredients-section">
-            <h3>Ingredients</h3>
-            <ul>
-              <li>ingredient
-                <span>amount</span>
-                <span>cost</span>
-              </li>
-              <li>ingredient
-                <span>amount</span>
-                <span>cost</span>
-              </li>
-              <li>ingredient
-                <span>amount</span>
-                <span>cost</span>
-              </li>
-            </ul>
-        </section>
-        <section class="directions-section">
-          <h3>Directions</h3>
-          <ol>
-            <li>stuff</li>
-            <li>more stuff</li>
-            <li>last stuff</li>
-          </ol>
-        </section>
+        <h2 id="recipe-title">Recipe Title</h2>
+        <div class="recipe-info-box">
+          <div class="recipe-details">
+            <section class="ingredients-section">
+              <h3>Ingredients</h3>
+              <ul>
+                <li>
+                  <span class="recipe-page-list-font">ingredient</span>
+                  <span class="recipe-page-list-font">amount</span>
+                  <span class="recipe-page-list-font">cost</span>
+                </li>
+                <li>
+                  <span class="recipe-page-list-font">ingredient</span>
+                  <span class="recipe-page-list-font">amount</span>
+                  <span class="recipe-page-list-font">cost</span>
+                </li>
+                <li>
+                  <span class="recipe-page-list-font">ingredient</span>
+                  <span class="recipe-page-list-font">amount</span>
+                  <span class="recipe-page-list-font">cost</span>
+                </li>
+              </ul>
+          </section>
+          <section class="directions-section">
+            <h3>Directions</h3>
+            <ol>
+              <li>stuff</li>
+              <li>more stuff</li>
+              <li>last stuff</li>
+            </ol>
+          </section>
+          </div>
         </div>
 
       </article>
