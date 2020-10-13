@@ -2,11 +2,153 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <title>Whats Cookin</title>
   </head>
   <body>
-    <h1>Whats Cookin</h1>
 
+    <nav>
+      <div class="greeting">
+        <h1>Howdy <span>Olga and Sarah!</span> What do you want to cook today?</h1>
+      </div>
+      <div id="nav-buttons">
+        <button class="nav-button hidden">All Recipes</button>
+        <button class="nav-button">Pantry</button>
+      </div>
+      <div class="forms">
+        <span class="form-box">
+        <label class="form-titles" for="filter">Filter:</label>
+        <form action="filter by tag or type">
+          <input class="input-boxes" type="text">
+        </form>
+      </span>
+      <span class="form-box">
+        <label class="form-titles" for="search">Search:</label>
+        <form action="search by ingredient">
+         <input class="input-boxes" type="text">
+        </form>
+      </span>
+      </div>
+    </nav>
+
+    <header>
+        <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png">
+    </header>
+
+    <main>
+      <article class="all-recipes hidden">
+        <section class = "recipe-card">
+          <div class="icon-box">
+            <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
+            <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
+            <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
+            <img class="heart-icon" "heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
+            <!-- star and chef hat icons -->
+          </div>
+          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
+          <h2>Recipe Title</h2>
+        </section>
+        <section class = "recipe-card">
+          <div class="icon-box">
+            <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
+            <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
+            <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
+            <img class="heart-icon" "heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
+            <!-- star and chef hat icons -->
+          </div>
+          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
+          <h2>Recipe Title</h2>
+        </section>
+        <section class = "recipe-card">
+          <div class="icon-box">
+            <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
+            <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
+            <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
+            <img class="heart-icon" "heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
+            <!-- star and chef hat icons -->
+          </div>
+          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
+          <h2>Recipe Title</h2>
+        </section>
+        <section class = "recipe-card">
+          <div class="icon-box">
+            <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
+            <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
+            <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
+            <img class="heart-icon" "heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
+            <!-- star and chef hat icons -->
+          </div>
+          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
+          <h2>Recipe Title</h2>
+        </section>
+        <section class = "recipe-card">
+          <div class="icon-box">
+            <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
+            <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
+            <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
+            <img class="heart-icon" "heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
+            <!-- star and chef hat icons -->
+          </div>
+          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
+          <h2>Recipe Title</h2>
+        </section>
+      </article>
+
+      <article class="single-recipe hidden">
+        <!-- <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png" alt="What's Cooking title"> -->
+        <img class="single-recipe-img" src="https://spoonacular.com/recipeImages/678353-556x370.jpg" alt="Current Chosen Recipe">
+        <h2 class="recipe-title">Recipe Title</h2>
+        <div class="recipe-info-box">
+          <div class="recipe-details">
+            <section class="ingredients-section">
+              <h3>Ingredients</h3>
+              <ul>
+                <li>
+                  <span class="recipe-page-list-font">ingredient</span>
+                  <span class="recipe-page-list-font">amount</span>
+                  <span class="recipe-page-list-font">cost</span>
+                </li>
+                <li>
+                  <span class="recipe-page-list-font">ingredient</span>
+                  <span class="recipe-page-list-font">amount</span>
+                  <span class="recipe-page-list-font">cost</span>
+                </li>
+                <li>
+                  <span class="recipe-page-list-font">ingredient</span>
+                  <span class="recipe-page-list-font">amount</span>
+                  <span class="recipe-page-list-font">cost</span>
+                </li>
+              </ul>
+          </section>
+          <section class="directions-section">
+            <h3>Directions</h3>
+            <ol>
+              <li>stuff</li>
+              <li>more stuff</li>
+              <li>last stuff</li>
+            </ol>
+          </section>
+          </div>
+        </div>
+
+      </article>
+
+      <article class = "pantry">
+          <h2 class="recipe-title">User's Pantry</h2>
+            <ul class="ingredients">
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+            </ul>
+      </article>
+
+    </main>
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="../data/recipes.js"></script>
     <script type="text/javascript" src="../data/ingredients.js"></script>

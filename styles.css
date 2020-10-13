@@ -1,0 +1,288 @@
+html {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  background: #EFEEEC;
+  height: 100%;
+}
+
+header {
+  height: 30%;
+}
+
+main {
+  height: 70%;
+}
+
+h1 {
+  font-size: 1rem;
+  margin: 1em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+nav {
+  display: flex;
+  background: #A23939;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.greeting {
+  margin-left: 1em;
+  width: 60%;
+}
+
+.forms {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 1em;
+  flex-direction: row;
+}
+
+.form-box {
+  margin: 0em 0.2em 0.2em 0.2em;
+  display: flex;
+}
+
+.form-titles {
+  margin-right: 0.2em;
+}
+
+input[type=text] {
+  border: 0;
+  border-radius: 1em;
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+#nav-buttons {
+  margin: 0.8em 1em 1em 1em;
+}
+
+.nav-button {
+  width: 7em;
+  border: 0;
+  border-radius: 1em;
+}
+
+.nav-button:hover {
+  box-shadow: 0px 0px 10px #FFF;
+}
+
+.whats-cooking-logo {
+  width: 18em;
+  height: 7em;
+  margin-top: 5em;
+  margin-bottom: 2em;
+}
+
+.all-recipes {
+ display: flex;
+ justify-content: space-around;
+ flex-wrap: wrap;
+}
+
+.recipe-card {
+  align-items: center;
+  border: #A23939 3px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2em 1em;
+  width: 20%;
+  border-radius: 15px;
+
+}
+
+.single-recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.recipe-card-img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  opacity: 1;
+}
+
+.icon-box {
+  opacity: 0;
+  top: -9999px;
+}
+
+.recipe-card:hover .recipe-card-img {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  box-shadow: 0px 0px 10px #A23939;
+}
+
+.recipe-card:hover div.icon-box {
+  position: relative;
+  display: flex;
+  height: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  opacity: 1;
+  top: 14%;
+  height: 10%;
+}
+
+.heart-icon {
+  position: absolute;
+  height: auto;
+  width: 2.5em;
+  margin: 0px 1.5em 0 -5em;
+}
+.chef-icon {
+  position: absolute;
+  width: 2.5em;
+  height: auto;
+  margin: 0 0em 0em 2.5em;
+}
+
+img.heart-icon:hover {
+  cursor: pointer;
+}
+
+.recipe-details {
+  display: flex;
+  width: 100%;
+}
+
+
+h3 {
+  font-size: 2em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0em;
+  padding: 0em;
+}
+
+ol {
+  padding: 0px 0em 0em 0.7em;
+  margin: 0;
+}
+
+li {
+  font-size: 1.2em;
+}
+
+.recipe-info-box {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.ingredients-section {
+  background-color: #A23939;
+  padding: 1em 0em 1em 2em;
+  color: white;
+  width: 50%;
+}
+
+.directions-section {
+  padding: 0em 0em 1em 2em;
+  border-width: 1em 1em 0em 1em;
+  border-style: solid;
+  border-color: #A23939;
+  background-color: white;
+  width: 50%;
+}
+
+.pantry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ingredients{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.pantry-ingredients {
+  border: #A23939 3px solid;
+  margin: .5em;
+  padding: .5em;
+  border-radius: 8px;
+  width: 10em;
+  height: 50%;
+}
+
+
+@media only screen and (max-width: 850px) {
+  h1 {
+    font-size: 0.9em;
+  }
+  h2 {
+    font-size: 0.8em;
+    margin: 1.5em 0 2em 0em;
+  }
+  h3 {
+    font-size: 0.65em;
+  }
+  .forms {
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.8em;
+  }
+  .whats-cooking-logo {
+    width: 13em;
+    height: 5em;
+    margin-top: 7em;
+  }
+  .recipe-card {
+    margin: 1em 0em 0em 0em;
+  }
+  .heart-icon {
+    width: 1.5em;
+    margin: 0 1.5em 0 -3em;
+  }
+  .chef-icon {
+    width: 1.5em;
+    margin: 0 0em 0em 1.5em;
+  }
+  #nav-buttons {
+    margin: 0em 1em 0em 1em;
+  }
+  .single-recipe-img {
+    width: 71%;
+  }
+  li{
+    font-size: 0.65em;
+  }
+}
+
+.hidden {
+  display: none;
+}
