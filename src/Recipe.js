@@ -1,8 +1,8 @@
 class Recipe {
-  constructor(id, image, ingridients, instructions, name, tags) {
+  constructor(id, image, ingredients, instructions, name, tags) {
     this.id = id,
     this.image = image,
-    this.ingridients = ingridients,
+    this.ingredients = ingredients,
     this.instructions = instructions,
     this.name = name,
     this.tags = tags
@@ -14,7 +14,7 @@ class Recipe {
 
   calculateTotalRecipeCost() {
     // return the total cost = amount * price
-    //need an ingridient class
+    //need an ingredient class
   }
 }
 

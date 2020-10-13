@@ -5,6 +5,7 @@ const recipeCards = require('../data/test-data');
 const prototypeRecipes = recipeCards.sampleRecipes;
 const Recipe = require('../src/Recipe');
 
+//TODO sad path with data types
 describe('Recipe', () => {
   let recipe1;
 
@@ -12,7 +13,7 @@ describe('Recipe', () => {
     recipe1 = new Recipe(
       prototypeRecipes[0].id,
       prototypeRecipes[0].image,
-      prototypeRecipes[0].ingridients,
+      prototypeRecipes[0].ingredients,
       prototypeRecipes[0].instructions,
       prototypeRecipes[0].name,
       prototypeRecipes[0].tags
@@ -20,7 +21,7 @@ describe('Recipe', () => {
     recipe2 = new Recipe(
       prototypeRecipes[1].id,
       prototypeRecipes[1].image,
-      prototypeRecipes[1].ingridients,
+      prototypeRecipes[1].ingredients,
       prototypeRecipes[1].instructions,
       prototypeRecipes[1].name,
       prototypeRecipes[1].tags
@@ -50,9 +51,9 @@ describe('Recipe', () => {
     expect(recipe2.image).to.be.equal("https://spoonacular.com/recipeImages/678353-556x370.jpg");
   });
 
-  it('should have an array of ingridients', () => {
-    expect(recipe1.ingridients).to.be.equal(prototypeRecipes[0].ingridients);
-    expect(recipe2.ingridients).to.be.equal(prototypeRecipes[1].ingridients);
+  it('should have an array of ingredients', () => {
+    expect(recipe1.ingredients).to.be.equal(prototypeRecipes[0].ingredients);
+    expect(recipe2.ingredients).to.be.equal(prototypeRecipes[1].ingredients);
   });
 
   it('should have an array of instructions', () => {
