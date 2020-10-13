@@ -11,6 +11,11 @@ class Recipe {
   getInstructions() {
     return this.instructions;
   }
+
+  calculateTotalRecipeCost() {
+    // return the total cost = amount * price
+    //need an ingridient class
+  }
 }
 
 module.exports = Recipe;
