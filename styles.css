@@ -8,6 +8,11 @@ body {
   background: #EFEEEC;
 }
 
+h1 {
+  font-size: 1rem;
+  margin: 1em;
+}
+
 h2 {
   font-size: 3em;
 }
@@ -50,7 +55,7 @@ header {
 
 .whats-cooking-logo {
   width: 40vw;
-  margin-top: 5.5em;
+  margin-top: 4.7em;
   margin-bottom: 2em;
 }
 
@@ -62,7 +67,7 @@ header {
 
 .recipe-card {
   align-items: center;
-  border: #A23939 3px solid;;
+  border: #A23939 3px solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,6 +106,10 @@ h3 {
   font-size: 2em;
 }
 
+ul {
+  list-style-type: none;
+}
+
 li {
   font-size: 1.2em;
 }
@@ -111,6 +120,25 @@ li {
 
 .directions-section {
   width: 60%;
+}
+
+.pantry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ingredients{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.pantry-ingredients {
+  border: #A23939 3px solid;
+  margin: .5em;
+  padding: .2em;
+  border-radius: 8px;
 }
 
 

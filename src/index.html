@@ -12,6 +12,10 @@
       <div class="greeting">
         <h1>Howdy <span>Olga and Sarah!</span> What do you want to cook today?</h1>
       </div>
+      <div>
+        <button>All Recipes</button>
+        <button>Pantry</button>
+      </div>
       <div class="forms">
         <label class="form-titles" for="filter">Filter:</label>
         <form action="filter by tag or type">
@@ -87,7 +91,7 @@
         </section>
       </article>
 
-      <article class="single-recipe">
+      <article class="single-recipe hidden">
         <!-- <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png" alt="What's Cooking title"> -->
         <img class="single-recipe-img" src="https://spoonacular.com/recipeImages/678353-556x370.jpg" alt="Current Chosen Recipe">
         <h2>Recipe Title</h2>
@@ -122,17 +126,13 @@
       </article>
 
       <article class = "pantry">
-        <section>
           <h2>User's Pantry</h2>
-          <div>
-            <ul>
-              <li>food</li>
-              <li>food</li>
-              <li>food</li>
-              <li>food</li>    
+            <ul class="ingredients">
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
+              <li class="pantry-ingredients">food <br>quantity: 5cups</li>    
             </ul>
-          </div>
-        </section>
       </article>
 
     </main>
