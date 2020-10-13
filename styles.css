@@ -8,6 +8,10 @@ body {
   background: #EFEEEC;
 }
 
+h2 {
+  font-size: 3em;
+}
+
 nav {
   display: flex;
   background: #A23939;
@@ -46,7 +50,8 @@ header {
 
 .whats-cooking-logo {
   width: 40vw;
-  margin: 5.5em;
+  margin-top: 5.5em;
+  margin-bottom: 2em;
 }
 
 .all-recipes {
@@ -67,21 +72,63 @@ header {
   
 }
 
+.single-recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .recipe-card-img {
   width: 100%;
-  border-radius: 12px 12px 0 0;;
+  border-radius: 12px 12px 0 0;
+}
+
+
+.single-recipe-img {
+  width: 50%;
+}
+
+.recipe-details {
+  display: flex;
+  justify-content: space-around;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+li {
+  font-size: 1.2em;
+}
+
+.ingredients-section {
+  width: 40%;
+}
+
+.directions-section {
+  width: 60%;
 }
 
 
 
-@media (max-width: 400px) {
+
+/* @media (max-width: 400px) {
   .all-recipes {
     display: block;
-    .recipe-card {
+  }
+  .recipe-card {
       width: 100%;
       margin: 0 0 10px 0;
     }
-  }
+  } */
+
+
+.hidden {
+  display: none;
 }
 
 
