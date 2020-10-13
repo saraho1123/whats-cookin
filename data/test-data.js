@@ -86,6 +86,79 @@ const sampleRecipes = [{
   }
 ];
 
+const sampleIngridients = [{
+    "id": 1,
+    "name": "pumpkin",
+    "estimatedCostInCents": 142
+  },
+  {
+    "id": 2,
+    "name": "egg nog",
+    "estimatedCostInCents": 582
+  },
+  {
+    "id": 3,
+    "name": "cinnamon",
+    "estimatedCostInCents": 472
+  },
+  {
+    "id": 4,
+    "name": "nutmeg",
+    "estimatedCostInCents": 582
+  },
+  {
+    "id": 5,
+    "name": "fall leaves",
+    "estimatedCostInCents": 472
+  },
+  {
+    "id": 6,
+    "name": "apple cider",
+    "estimatedCostInCents": 472
+  }
+];
+
+let sampleUsers = [
+  {
+    "name": "Witch",
+    "id": 10,
+    "pantry": [
+      {
+        "ingredient": 1,
+        "amount": 4
+      },
+      {
+        "ingredient": 2,
+        "amount": 3
+      },
+      {
+        "ingredient": 3,
+        "amount": 2
+      },
+    ]
+  },
+  {
+    "name": "Scare Crow",
+    "id": 11,
+    "pantry": [
+      {
+        "ingredient": 4,
+        "amount": 6
+      },
+      {
+        "ingredient": 5,
+        "amount": 10
+      },
+      {
+        "ingredient": 6,
+        "amount": 7
+      },
+    ]
+  }
+];
+
 module.exports = {
-  sampleRecipes
+  sampleRecipes,
+  sampleIngridients,
+  sampleUsers
 }
