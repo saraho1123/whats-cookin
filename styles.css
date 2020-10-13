@@ -14,7 +14,13 @@ h1 {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 2em;
+}
+
+@media only screen and (max-width: 1200px) {
+  h2 {
+    font-size: 1em;
+  }
 }
 
 nav {
@@ -36,21 +42,42 @@ nav {
 .forms {
   width: 40%;
   display: flex;
-  align-items: center;
+  justify-content: space-evenly;
   margin-right: 1em;
+  flex-direction: row;
+}
+
+.form-box {
+  margin: 0em 0.2em 0.2em 0.2em;
+  display: flex;
 }
 
 .form-titles {
-
+  margin-right: 0.2em;
 }
 
-input {
-  margin: 1em
+input[type=text] {
+  border: 0;
+  border-radius: 1em;
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
 }
 
 header {
   display: flex;
   justify-content: center;
+}
+
+#nav-buttons {
+  margin: 0.8em 1em 1em 1em;
+}
+
+.nav-button {
+  width: 7em;
+  border: 0;
+  border-radius: 1em;
 }
 
 .whats-cooking-logo {
@@ -71,10 +98,10 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 2em;
-  width: 24%;
+  margin: 2em 1em;
+  width: 20%;
   border-radius: 15px;
-  
+
 }
 
 .single-recipe {
@@ -87,11 +114,50 @@ header {
 .recipe-card-img {
   width: 100%;
   border-radius: 12px 12px 0 0;
+  opacity: 1;
 }
 
+.icon-box {
+  opacity: 0;
+  top: -9999px;
+}
 
-.single-recipe-img {
-  width: 50%;
+.recipe-card:hover .recipe-card-img {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  box-shadow: 0px 0px 10px #A23939;
+}
+
+.recipe-card:hover div.icon-box {
+  position: relative;
+  display: flex;
+  height: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  opacity: 1;
+  top: 14%;
+  height: 10%;
+}
+
+.heart-icon {
+  position: absolute;
+  height: auto;
+  width: 2.5em;
+  margin: 0px 1.5em 0 -5em;
+}
+.chef-icon {
+  position: absolute;
+  width: 2.5em;
+  height: auto;
+  margin: 0 0em 0em 2.5em;
+}
+
+img.heart-icon:hover {
+  cursor: pointer;
 }
 
 .recipe-details {
@@ -142,24 +208,34 @@ li {
 }
 
 
-
-
-/* @media (max-width: 400px) {
-  .all-recipes {
-    display: block;
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: 0.8em;
+  }
+  .forms {
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.8em;
+  }
+  .whats-cooking-logo {
+    margin-top: 5.7em;
   }
   .recipe-card {
-      width: 100%;
-      margin: 0 0 10px 0;
-    }
-  } */
-
+    margin: 1em 0em 0em 0em;
+  }
+  .heart-icon {
+    width: 1.5em;
+    margin: 0 1.5em 0 -3em;
+  }
+  .chef-icon {
+    width: 1.5em;
+    margin: 0 0em 0em 1.5em;
+  }
+  #nav-buttons {
+    margin: 0em 1em 0em 1em;
+  }
+}
 
 .hidden {
   display: none;
 }
-
-
-
-
-
