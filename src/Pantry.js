@@ -4,6 +4,18 @@ class Pantry {
     this.pantry = userPantry;
     this.neededIngredients = null;
   }
+
+  determineAbilityToCook() {
+
+  }
+
+  addIngredientsToShoppingList() {
+
+  }
+
+  updatePantryQuantities() {
+    
+  }
 };
 
 module.exports = Pantry;

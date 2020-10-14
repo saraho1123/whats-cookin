@@ -4,7 +4,6 @@ const expect = chai.expect;
 const sampleData = require('../data/test-data');
 const prototypePantries1 = sampleData.sampleUsers[0];
 const prototypePantries2 = sampleData.sampleUsers[1];
-// const prototypeIngredients = recipeCards.sampleIngredients;
 const Pantry = require('../src/Pantry');
 
 //TODO sad path with data types
