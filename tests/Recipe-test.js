@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 const recipeCards = require('../data/test-data');
 const prototypeRecipes = recipeCards.sampleRecipes;
+const prototypeIngredients = recipeCards.sampleIngredients;
 const Recipe = require('../src/Recipe');
 
 //TODO sad path with data types
@@ -73,5 +74,20 @@ describe('Recipe', () => {
 
   it('should return instructions', () => {
     expect(recipe1.getInstructions()).to.be.equal(prototypeRecipes[0].instructions);
+  });
+
+  it('should return an array of the ingredients with prices', () => {
+    const estimatedIngredients = [
+      { id: 1, name: 'pumpkin', estimatedCostInCents: 142 },
+      { id: 2, name: 'egg nog', estimatedCostInCents: 582 },
+      { id: 3, name: 'cinnamon', estimatedCostInCents: 472 },
+      { id: 4, name: 'nutmeg', estimatedCostInCents: 582 }
+    ]
+
+    expect(recipe1.getIngredientWithPrices()).to.deep.equal(estimatedIngredients);
+  });
+
+  it('should return the total cost of the recipe', () => {
+    expect(recipe1.calculateTotalCost()).to.equal(1267);
   });
 });
