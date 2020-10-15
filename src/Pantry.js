@@ -16,28 +16,33 @@ class Pantry {
     this.neededIngredients = [];
   }
 
+  getPantryIds() {
+    return this.pantry.map(ingredient => {
+      return ingredient.ingredient;
+    })
+  }
+
   determineAbilityToCook(recipe) {
+    let pantryIds = this.getPantryIds();
     recipe.ingredients.reduce((acc, ingredient) => {
       if (!this.neededIngredients) {
         this.neededIngredients = [];
       }
-      this.pantry.forEach(pantryIngredient => {
-        // pantry.includes(recipe.id)
-        if (ingredient.id !== pantryIngredient.ingredient) {
-          console.log(ingredient.id)
-          console.log(pantryIngredient.ingredient)
-          return this.neededIngredients.push({name: ingredient.id});
-          // let amountDifference = ingredient.quantity.amount - userIngredient.amount;
+      if (!pantryIds.includes(ingredient.id)) {
+        return this.neededIngredients.push({ name: ingredient.id, amount: ingredient.quantity.amount }); 
+    }
+    return acc;
+    }, []);
+  };
+
+  determineAmountNeeded() 
+
+   // let amountDifference = ingredient.quantity.amount - userIngredient.amount;
           // if (amountDifference > 0) {
           //   acc.push({name: ingredient.id, amount: amountDifference});
           // } 
         // } else {
         //   acc.push({name: ingredient.id, amount: ingredient.amount})
-        }
-      })
-      return acc;
-      }, []);
-    };
  
 
     // what? 2 arrays of objects: recipe.ingredient array && pantry.ingredient

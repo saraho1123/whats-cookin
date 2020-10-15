@@ -25,7 +25,7 @@ describe('Pantry', () => {
     expect(Pantry).to.be.a('function');
   });
 
-  it('should be an instance of Recipe', () => {
+  it('should be an instance of Pantry', () => {
     const pantry = new Pantry();
     expect(pantry).to.be.an.instanceof(Pantry);
   });
@@ -49,8 +49,24 @@ describe('Pantry', () => {
       prototypeRecipe.name, 
       prototypeRecipe.tags);
     
-      pantry1.determineAbilityToCook(recipe1)
+    pantry1.determineAbilityToCook(recipe1)
 
     expect(pantry1.neededIngredients[0].name).to.equal(4);
-  })
+  });
+
+  it('should add needed recipe ingredients if they are not in the pantry', () => {
+    const recipe1 = new Recipe(
+      prototypeRecipe.id, 
+      prototypeRecipe.image, 
+      prototypeRecipe.ingredients, 
+      prototypeRecipe.instructions, 
+      prototypeRecipe.name, 
+      prototypeRecipe.tags);
+    
+    pantry1.determineAbilityToCook(recipe1)
+
+    expect(pantry1.neededIngredients[0].amount).to.equal(0.5);
+  });
+
+
 });
