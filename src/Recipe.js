@@ -1,5 +1,7 @@
 // const Ingredient = require('./src/Ingredient');
 const sampleData = require('../data/test-data');
+const Basket = require('./Basket');
+const Ingredient = require('./Ingredient');
 const prototypeIngredients = sampleData.sampleIngredients;
 
 class Recipe {
@@ -12,21 +14,29 @@ class Recipe {
     this.tags = tags
   };
 
+  
+  
   getInstructions() {
     return this.instructions;
   }
 
-  getIngredientWithPrices() {
-    let ingredientsWithPrice = prototypeIngredients.filter(ingredient => {
-     return this.ingredients.find(recipeIngredient => {
-       return   recipeIngredient.id === ingredient.id;
-     });
-    });
-    return ingredientsWithPrice;
+  createBasket(basket) {  
+    return basket.ingredients  
   }
 
-  calculateTotalCost() {
-    let estimatedIngredients = this.getIngredientWithPrices();
+
+  getIngredientWithPrices(basket) {
+    let allIngredients = this.createBasket(basket);
+    let ingredientsWithPrices = allIngredients.filter(ingredient => {
+         return this.ingredients.find(recipeIngredient => {
+           return   recipeIngredient.id === ingredient.id;
+         });
+        });
+        return ingredientsWithPrices;
+    }
+
+  calculateTotalCost(basket) {
+    let estimatedIngredients = this.getIngredientWithPrices(basket);
     let totalCost = estimatedIngredients.reduce((total, unit, index) => {
       return  total += unit.estimatedCostInCents * this.ingredients[index].quantity.amount;
     }, 0);

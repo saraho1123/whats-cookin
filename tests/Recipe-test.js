@@ -5,12 +5,21 @@ const recipeCards = require('../data/test-data');
 const prototypeRecipes = recipeCards.sampleRecipes;
 const prototypeIngredients = recipeCards.sampleIngredients;
 const Recipe = require('../src/Recipe');
+const Basket = require('../src/Basket');
+const Ingredient = require('../src/Ingredient');
 
 //TODO sad path with data types
 describe('Recipe', () => {
-  let recipe1;
+  let recipe1, basket1, allIngredients; // ingredient2, ingredient3, ingredient4;
 
   beforeEach (() => {
+    // this would be done in script.js:
+    allIngredients = prototypeIngredients.map(ingredient => {
+      return new Ingredient(ingredient.id, ingredient.name, ingredient.estimatedCostInCents)
+    });
+
+    basket1 = new Basket(allIngredients);
+
     recipe1 = new Recipe(
       prototypeRecipes[0].id,
       prototypeRecipes[0].image,
@@ -19,6 +28,7 @@ describe('Recipe', () => {
       prototypeRecipes[0].name,
       prototypeRecipes[0].tags
     );
+
     recipe2 = new Recipe(
       prototypeRecipes[1].id,
       prototypeRecipes[1].image,
@@ -84,10 +94,10 @@ describe('Recipe', () => {
       { id: 4, name: 'nutmeg', estimatedCostInCents: 582 }
     ]
 
-    expect(recipe1.getIngredientWithPrices()).to.deep.equal(estimatedIngredients);
+    expect(recipe1.getIngredientWithPrices(basket1)).to.deep.equal(estimatedIngredients);
   });
 
   it('should return the total cost of the recipe', () => {
-    expect(recipe1.calculateTotalCost()).to.equal(1267);
+    expect(recipe1.calculateTotalCost(basket1)).to.equal(1267);
   });
 });
