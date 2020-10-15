@@ -32,12 +32,12 @@ describe('Ingredient', () => {
     expect(ingredient).to.be.an.instanceof(Ingredient);
   });
 
-  it('should be an id', () => {
+  it('should have an id', () => {
     expect(ingredient1.id).to.be.equal(prototypeIngredients[0].id);
     expect(ingredient2.id).to.be.equal(prototypeIngredients[1].id);
   });
 
-  it('should be a name', () => {
+  it('should have a name', () => {
     expect(ingredient1.name).to.be.equal(prototypeIngredients[0].name);
     expect(ingredient2.name).to.be.equal(prototypeIngredients[1].name);
   });
