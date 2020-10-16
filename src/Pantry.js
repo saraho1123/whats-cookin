@@ -1,13 +1,4 @@
-// const sampleData1 = require('../data/test-data');
-// const prototypeRecipe = sampleData1.sampleRecipes;
 // const Recipe = require('./Recipe');
-// const recipe = new Recipe(
-//   prototypeRecipe.id, 
-//   prototypeRecipe.image, 
-//   prototypeRecipe.ingredients, 
-//   prototypeRecipe.instructions, 
-//   prototypeRecipe.name, 
-//   prototypeRecipe.tags);
 
 class Pantry {
   constructor(userId, userPantry) {
@@ -22,49 +13,60 @@ class Pantry {
     })
   }
 
+  getIngredientsWithQuantity() {
+    return this.pantry.reduce((acc, ingredient) => {
+      acc[ingredient.ingredient] = ingredient.amount
+      return acc
+    }, {})
+  }
+
   determineAbilityToCook(recipe) {
-    let pantryIds = this.getPantryIds();
-    recipe.ingredients.reduce((acc, ingredient) => {
-      if (!this.neededIngredients) {
-        this.neededIngredients = [];
-      }
-      if (!pantryIds.includes(ingredient.id)) {
-        return this.neededIngredients.push({ name: ingredient.id, amount: ingredient.quantity.amount }); 
-    }
-    return acc;
-    }, []);
+    let pantryIds = this.getPantryIds();//refactor?
+    let ingredientsWithQuantity = this.getIngredientsWithQuantity();//refactor?
+
+    this.neededIngredients = recipe.ingredients
+      .filter(ingredient => {
+        const pantryQuantity = ingredientsWithQuantity[ingredient.id] || 0; //refactor?
+        return (!pantryIds.includes(ingredient.id) || ingredient.quantity.amount > pantryQuantity)
+      })
+      .map(ingredient => {
+        const pantryQuantity = ingredientsWithQuantity[ingredient.id] || 0;//refactor?
+        return { name: ingredient.id, amount: ingredient.quantity.amount - pantryQuantity };
+      })
   };
 
-  determineAmountNeeded() 
+  // determineAbilityToCook(recipe) {
+  //   let pantryIds = this.getPantryIds(); //ids
+  //   let ingredientsWithQuantity = this.getIngredientsWithQuantity(); //pantry ingredients
+  //   this.neededIngredients = recipe.ingredients.reduce((acc, ingredient) => {
+  //     const pantryQuantity = ingredientsWithQuantity[ingedient.id] || 0;
+  //     if (!pantryIds.includes(ingredient.id) || ingredient.quantity.amount > pantryQuantity) {
+  //       acc.push({ name: ingredient.id, amount: ingredient.quantity.amount - pantryQuantity});
+  //     }
+  //   }
+  // //
+  // //   return acc;
+  // // }, [])
+  // // };
 
-   // let amountDifference = ingredient.quantity.amount - userIngredient.amount;
-          // if (amountDifference > 0) {
-          //   acc.push({name: ingredient.id, amount: amountDifference});
-          // } 
-        // } else {
-        //   acc.push({name: ingredient.id, amount: ingredient.amount})
- 
+  //   addIngredientsToShoppingList()  {
+  //
+  // }
 
-    // what? 2 arrays of objects: recipe.ingredient array && pantry.ingredient
-    // want? amounts from each in order to match them
-    // methods? reduce and forEach
-    // how? reduce for recipe.ingedient.amounts and forEach for pantry.ingredient.amount
+  updatePantryQuantities(recipe) {
+    let pantryIds = this.getPantryIds();
+    let ingredientsWithQuantity = this.getIngredientsWithQuantity();
+    this.pantry = recipe.ingredients
+      .filter(ingredient => {
+        const pantryQuantity = ingredientsWithQuantity[ingredient.id] || 0;
+        return (pantryIds.includes(ingredient.id) || ingredient.quantity.amount <= pantryQuantity)
+      })
+      .map(ingredient => {
+        const pantryQuantity = ingredientsWithQuantity[ingredient.id] || 0;
+        return { ingredient: ingredient.id, amount: pantryQuantity - ingredient.quantity.amount };
+      });
+  };
 
-    // match recipe.ingredient.id to pantry.ingredient.id
-    // if ingredient id doesn't exist >> addIngredientsToShoppingList() 
-    // if matches THEN
-
-    // subtract recipe.ingredient.amount - pantry.ingredient.amount 
-    // if positive >> addIngredientsToShoppingList() 
-    // else updatePantryQuantities()
-
-    addIngredientsToShoppingList()  {
-
-  }
-
-  updatePantryQuantities() {
-
-  }
 };
 
 module.exports = Pantry;

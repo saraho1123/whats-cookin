@@ -40,33 +40,46 @@ describe('Pantry', () => {
     expect(pantry2.pantry).to.equal(sampleData.sampleUsers[1].pantry);
   });
 
-  it('should add needed recipe ingredients if they are not in the pantry', () => {
+  it('should add needed recipe ingredients ids if they are not in the pantry', () => {
     const recipe1 = new Recipe(
-      prototypeRecipe.id, 
-      prototypeRecipe.image, 
-      prototypeRecipe.ingredients, 
-      prototypeRecipe.instructions, 
-      prototypeRecipe.name, 
+      prototypeRecipe.id,
+      prototypeRecipe.image,
+      prototypeRecipe.ingredients,
+      prototypeRecipe.instructions,
+      prototypeRecipe.name,
       prototypeRecipe.tags);
-    
+
     pantry1.determineAbilityToCook(recipe1)
 
     expect(pantry1.neededIngredients[0].name).to.equal(4);
   });
 
-  it('should add needed recipe ingredients if they are not in the pantry', () => {
+  it('should add needed recipe ingredients amounts if they are not in the pantry', () => {
     const recipe1 = new Recipe(
-      prototypeRecipe.id, 
-      prototypeRecipe.image, 
-      prototypeRecipe.ingredients, 
-      prototypeRecipe.instructions, 
-      prototypeRecipe.name, 
+      prototypeRecipe.id,
+      prototypeRecipe.image,
+      prototypeRecipe.ingredients,
+      prototypeRecipe.instructions,
+      prototypeRecipe.name,
       prototypeRecipe.tags);
-    
+
     pantry1.determineAbilityToCook(recipe1)
 
     expect(pantry1.neededIngredients[0].amount).to.equal(0.5);
   });
 
+  it('should update pantry amounts if there enough ingredients to cook the recipe', () => {
+    const recipe1 = new Recipe(
+      prototypeRecipe.id,
+      prototypeRecipe.image,
+      prototypeRecipe.ingredients,
+      prototypeRecipe.instructions,
+      prototypeRecipe.name,
+      prototypeRecipe.tags);
+
+    pantry1.updatePantryQuantities(recipe1)
+
+    expect(pantry1.pantry[0].amount).to.equal(2.5);
+  });
 
 });
