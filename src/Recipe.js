@@ -14,26 +14,21 @@ class Recipe {
     this.tags = tags
   };
 
-  
-  
-  getInstructions() {
-    return this.instructions;
-  }
+  // getInstructions() {
+  //   return this.instructions;
+  // }
 
-  createBasket(basket) {  
-    return basket.ingredients  
-  }
-
+  // createBasket(basket) {
+  //   return basket.ingredients
+  // }
 
   getIngredientWithPrices(basket) {
-    let allIngredients = this.createBasket(basket);
+    let allIngredients = basket.ingredients;
     let ingredientsWithPrices = allIngredients.filter(ingredient => {
-         return this.ingredients.find(recipeIngredient => {
-           return   recipeIngredient.id === ingredient.id;
-         });
+          return this.ingredients.find(recipeIngredient => recipeIngredient.id === ingredient.id)
         });
-        return ingredientsWithPrices;
-    }
+    return ingredientsWithPrices;
+  }
 
   calculateTotalCost(basket) {
     let estimatedIngredients = this.getIngredientWithPrices(basket);
