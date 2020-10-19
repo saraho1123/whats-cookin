@@ -14,13 +14,22 @@ const prototypeUsers = sampleUsers;
 // const User = require('./User');
 // const Pantry = require('./Pantry')
 
-let userName = document.querySelector("#user-name");
-let allRecipes = document.querySelector(".all-recipes");
+let userName = document.querySelector('#user-name');
+let allRecipesView = document.querySelector('.all-recipes');
+let pantryView = document.querySelector('.pantry');
+let singleRecipeView = document.querySelector('.single-recipe');
+let buttonPantry = document.querySelector('.pantry-button');
+let buttonAllRecipes = document.querySelector('.all-recipes-button');
+
+
 
 var recipes = [];
 
 //EVENT LISTENERS
 window.addEventListener('load', displayTheUser);
+buttonPantry.addEventListener('click', displayPantryView);
+buttonAllRecipes.addEventListener('click', displayAllRecipesView);
+
 
 function getRandomUser(users) {
   let randomIndex = Math.floor(Math.random() * users.length);
@@ -49,7 +58,7 @@ function createRecipeBox() {
 
 function displayAllRecipes() {
   console.log("give me my recipes!!")
-  allRecipes.innerHTML = ''
+  allRecipesView.innerHTML = ''
   for(var i = 0; i < recipes.length; i++) {
     let oneRecipe = recipes[i]
     let miniRecipe =
@@ -65,10 +74,22 @@ function displayAllRecipes() {
           <h2>${oneRecipe.name}</h2>
         </section>
     `
-    allRecipes.innerHTML += miniRecipe;
-  }
+    allRecipesView.innerHTML += miniRecipe;
+  } 
+}
 
-  
+function displayPantryView() {
+  pantryView.classList.remove('hidden');
+  allRecipesView.classList.add('hidden');
+  buttonPantry.classList.add('hidden');
+  buttonAllRecipes.classList.remove('hidden');
+}
+
+function displayAllRecipesView() {
+  pantryView.classList.add('hidden');
+  allRecipesView.classList.remove('hidden');
+  buttonPantry.classList.remove('hidden');
+  buttonAllRecipes.classList.add('hidden');
 }
 
 

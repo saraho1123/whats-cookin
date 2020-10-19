@@ -13,8 +13,8 @@
         <h1>Howdy <span id="user-name">Olga and Sarah!</span> What do you want to cook today?</h1>
       </div>
       <div id="nav-buttons">
-        <button class="nav-button hidden">All Recipes</button>
-        <button class="nav-button">Pantry</button>
+        <button class="nav-button all-recipes-button hidden">All Recipes</button>
+        <button class="nav-button pantry-button">Pantry</button>
       </div>
       <div class="forms">
         <span class="form-box">
@@ -38,12 +38,32 @@
 
     <main>
       <article class="all-recipes">
+        <section class="recipe-card">
+          <div class="icon-box">
+            <div class="icon-radio-container">
+              <input type="radio" name="recipe-buttons" id="chef-button" class="chef-button">
+              <div>
+                <img class="chef-icon" src="../images/chef.png" alt="chef icon unchosen">
+                <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
+              </div>  
+            </div>
+            <div>
+              <input type="radio" name="recipe-buttons" id="heart-button" class="heart-button">
+              <div>
+                <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
+                <img class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
+              </div>
+            </div class="icon-radio-container">
+          </div>
+          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
+          <h2>Recipe Title</h2>
+        </section>
         <section class = "recipe-card">
           <div class="icon-box">
-            <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
+            <img class="chef-icon" src="../images/chef.png" alt="chef icon unchosen">
             <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
             <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
-            <img class="heart-icon" "heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
+            <img class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
             <!-- star and chef hat icons -->
           </div>
           <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
@@ -51,10 +71,10 @@
         </section>
         <section class = "recipe-card">
           <div class="icon-box">
-            <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
+            <img class="chef-icon" src="../images/chef.png" alt="chef icon unchosen">
             <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
             <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
-            <img class="heart-icon" "heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
+            <img class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
             <!-- star and chef hat icons -->
           </div>
           <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
@@ -62,10 +82,10 @@
         </section>
         <section class = "recipe-card">
           <div class="icon-box">
-            <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
+            <img class="chef-icon" src="../images/chef.png" alt="chef icon unchosen">
             <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
             <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
-            <img class="heart-icon" "heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
+            <img class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
             <!-- star and chef hat icons -->
           </div>
           <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
@@ -73,21 +93,10 @@
         </section>
         <section class = "recipe-card">
           <div class="icon-box">
-            <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
+            <img class="chef-icon"src="../images/chef.png" alt="chef icon unchosen">
             <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
             <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
-            <img class="heart-icon" "heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
-            <!-- star and chef hat icons -->
-          </div>
-          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
-          <h2>Recipe Title</h2>
-        </section>
-        <section class = "recipe-card">
-          <div class="icon-box">
-            <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
-            <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
-            <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
-            <img class="heart-icon" "heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
+            <img class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
             <!-- star and chef hat icons -->
           </div>
           <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
