@@ -4,6 +4,7 @@ const expect = chai.expect;
 const sampleData = require('../data/test-data');
 const prototypePantries1 = sampleData.sampleUsers[0];
 const prototypePantries2 = sampleData.sampleUsers[1];
+const prototypeIngredients = sampleData.sampleIngredients;
 const Pantry = require('../src/Pantry');
 const Recipe = require('../src/Recipe');
 const prototypeRecipe = sampleData.sampleRecipes[0];
@@ -84,5 +85,22 @@ describe('Pantry', () => {
     // console.log(pantry1.pantry)
     expect(pantry1.pantry[0].amount).to.equal(2.5);
   });
+
+  it('should create an array of pantry objects that includes the name of the ingredient', () => {
+    expect(pantry1.getIngredientName(prototypeIngredients)).to.deep.equal([
+      {
+        "name": 'pumpkin',
+        "amount": 4
+      },
+      {
+        "name": 'eggnog',
+        "amount": 3
+      },
+      {
+        "name": 'cinnamon',
+        "amount": 2
+      }
+    ])
+  })
 
 });
