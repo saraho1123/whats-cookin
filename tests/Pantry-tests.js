@@ -63,8 +63,11 @@ describe('Pantry', () => {
       prototypeRecipe.name,
       prototypeRecipe.tags);
 
+      console.log(pantry1.pantry)
+      console.log(pantry1.neededIngredients)
     pantry1.determineAbilityToCook(recipe1)
-
+    console.log(pantry1.pantry)
+    console.log(pantry1.neededIngredients)
     expect(pantry1.neededIngredients[0].amount).to.equal(0.5);
   });
 
@@ -76,9 +79,9 @@ describe('Pantry', () => {
       prototypeRecipe.instructions,
       prototypeRecipe.name,
       prototypeRecipe.tags);
-
+      // console.log(pantry1.pantry)
     pantry1.updatePantryQuantities(recipe1)
-
+    // console.log(pantry1.pantry)
     expect(pantry1.pantry[0].amount).to.equal(2.5);
   });
 

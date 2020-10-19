@@ -10,7 +10,7 @@
 
     <nav>
       <div class="greeting">
-        <h1>Howdy <span>Olga and Sarah!</span> What do you want to cook today?</h1>
+        <h1>Howdy <span id="user-name">Olga and Sarah!</span> What do you want to cook today?</h1>
       </div>
       <div id="nav-buttons">
         <button class="nav-button hidden">All Recipes</button>
@@ -37,7 +37,7 @@
     </header>
 
     <main>
-      <article class="all-recipes hidden">
+      <article class="all-recipes">
         <section class = "recipe-card">
           <div class="icon-box">
             <img class="chef-icon" "chef-icon" src="../images/chef.png" alt="chef icon unchosen">
@@ -134,7 +134,7 @@
 
       </article>
 
-      <article class = "pantry">
+      <article class = "pantry hidden">
           <h2 class="recipe-title">User's Pantry</h2>
             <ul class="ingredients">
               <li class="pantry-ingredients">food <br>quantity: 5cups</li>
@@ -149,9 +149,10 @@
       </article>
 
     </main>
-    <script type="text/javascript" src="../data/users.js"></script>
-    <script type="text/javascript" src="../data/recipes.js"></script>
-    <script type="text/javascript" src="../data/ingredients.js"></script>
+    <script type="text/javascript" src="./User.js"></script>
+    <script type="text/javascript" src="./Recipe.js"></script>
+    <script type="text/javascript" src="./Ingredient.js"></script>
+    <script type="text/javascript" src="./Pantry.js"></script>
     <script type="text/javascript" src="./scripts.js"></script>
   </body>
 </html>

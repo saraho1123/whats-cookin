@@ -1,8 +1,8 @@
 // const Ingredient = require('./src/Ingredient');
-const sampleData = require('../data/test-data');
+// const sampleData = require('../data/test-data');
 const Basket = require('./Basket');
 const Ingredient = require('./Ingredient');
-const prototypeIngredients = sampleData.sampleIngredients;
+// const prototypeIngredients = sampleData.sampleIngredients;
 
 class Recipe {
   constructor(id, image, ingredients, instructions, name, tags) {
