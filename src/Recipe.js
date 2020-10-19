@@ -1,7 +1,7 @@
 // const Ingredient = require('./src/Ingredient');
 // const sampleData = require('../data/test-data');
-const Basket = require('./Basket');
-const Ingredient = require('./Ingredient');
+// const Basket = require('./Basket');
+// const Ingredient = require('./Ingredient');
 // const prototypeIngredients = sampleData.sampleIngredients;
 
 class Recipe {
@@ -40,4 +40,4 @@ class Recipe {
   }
 }
 
-module.exports = Recipe;
+// module.exports = Recipe;

@@ -1,18 +1,18 @@
 // const chai = require("chai");
 // const expect = chai.expect;
 
-const sampleData = require('../data/test-data');
-const prototypeRecipes = recipeCards.sampleRecipes;
-const prototypeIngredients = recipeCards.sampleIngredients;
-const prototypeUsers = sampleData.sampleUsers;
-const prototypeUser1 = sampleData.sampleUsers[0];
-const prototypeUser2 = sampleData.sampleUsers[1];
+// const sampleData = require('../data/test-data');
+// const prototypeRecipes = recipeCards.sampleRecipes;
+// const prototypeIngredients = recipeCards.sampleIngredients;
+const prototypeUsers = sampleUsers;
+// const prototypeUser1 = sampleData.sampleUsers[0];
+// const prototypeUser2 = sampleData.sampleUsers[1];
 
-const Basket = require('./Basket');
-const Ingredient = require('./Ingredient');
-const Recipe = require('./Recipe');
-const User = require('./User');
-const Pantry = require('./Pantry')
+// const Basket = require('./Basket');
+// const Ingredient = require('./Ingredient');
+// const Recipe = require('./Recipe');
+// const User = require('./User');
+// const Pantry = require('./Pantry')
 
 let userName = document.querySelector("#user-name");
 
