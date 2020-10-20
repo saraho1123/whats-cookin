@@ -157,8 +157,10 @@ let sampleUsers = [
   }
 ];
 
-module.exports = {
-  sampleRecipes,
-  sampleIngredients,
-  sampleUsers
-}
+
+// module.exports = {
+//  sampleRecipes,
+//  sampleIngredients,
+//  sampleUsers
+//  }
+

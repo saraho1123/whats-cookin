@@ -10,6 +10,6 @@ class  Ingredient {
   }
 }
 
-module.exports = Ingredient;
+// module.exports = Ingredient;
 
 //make a use of ingredient method

@@ -13,6 +13,18 @@ class Pantry {
     })
   }
 
+  getIngredientName(ingredients) {
+    return this.pantry.map(pantryIngredient => {
+      let rightId = ingredients.filter(ingredient => {
+        return pantryIngredient.ingredient === ingredient.id;
+      })
+      return {
+        name: rightId[0].name,
+        amount: pantryIngredient.amount
+      };
+    });
+  }
+
   getIngredientsWithQuantity() {
     return this.pantry.reduce((acc, ingredient) => {
       acc[ingredient.ingredient] = ingredient.amount
@@ -69,4 +81,4 @@ class Pantry {
 
 };
 
-module.exports = Pantry;
+// module.exports = Pantry;

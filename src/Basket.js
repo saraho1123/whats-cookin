@@ -4,7 +4,7 @@ class Basket {
   }
 }
 
-module.exports = Basket;
+// module.exports = Basket;
 
 
 //filter or search ?
