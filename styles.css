@@ -54,6 +54,7 @@ nav {
 .form-box {
   margin: 0em 0.2em 0.2em 0.2em;
   display: flex;
+  align-items: center;
 }
 
 .form-titles {
@@ -167,7 +168,7 @@ label {
   margin: 0px 1.5em 0 -5em;
 }
 
-#chef-radio-button  {
+.chef-radio-button  {
   opacity: 0;
   position: absolute;
   width: 10.5em;
@@ -177,7 +178,7 @@ label {
   width: 4em;
   left: 0em;
 }
-#heart-radio-button {
+.heart-radio-button {
     opacity: 0;
     position: absolute;
     width: 10.5em;
@@ -188,7 +189,7 @@ label {
     right: 3.2em;
 }
 
-[type=radio] + img#chef-icon-disabled {
+[type=checkbox] + img#chef-icon-disabled {
   cursor: pointer;
 }
 
@@ -273,7 +274,7 @@ li {
 }
 
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 920px) {
   h1 {
     font-size: 0.9em;
   }
@@ -307,12 +308,12 @@ li {
     width: 1.5em;
     margin: 0.5em 0em 0em 1.4em;
   }
-  #chef-radio-button{
+  .chef-radio-button{
     position: absolute;
     width: 2em;
     left: -0.8em;
   }
-  #heart-radio-button{
+  .heart-radio-button{
     width: 1.7em;
     right: 1.65em;
   }
