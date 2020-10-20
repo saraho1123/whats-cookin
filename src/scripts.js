@@ -5,6 +5,7 @@
 const prototypeRecipes = sampleRecipes;
 // const prototypeIngredients = recipeCards.sampleIngredients;
 const prototypeUsers = sampleUsers;
+const prototypeIngredients = sampleIngredients;
 // const prototypeUser1 = sampleData.sampleUsers[0];
 // const prototypeUser2 = sampleData.sampleUsers[1];
 
@@ -20,15 +21,18 @@ let pantryView = document.querySelector('.pantry');
 let singleRecipeView = document.querySelector('.single-recipe');
 let buttonPantry = document.querySelector('.pantry-button');
 let buttonAllRecipes = document.querySelector('.all-recipes-button');
-
+let allPantry = document.querySelector('.ingredients')
+let pantryIngredient = document.querySelector('.pantry-ingredients')
+let pantryUserName = document.querySelector('#pantry-user-name')
 
 
 var recipes = [];
+var currentUser;
 
 //EVENT LISTENERS
 window.addEventListener('load', displayTheUser);
 buttonPantry.addEventListener('click', displayPantryView);
-buttonAllRecipes.addEventListener('click', displayAllRecipesView);
+buttonAllRecipes.addEventListener('click', displayPantryView);
 
 
 function getRandomUser(users) {
@@ -38,7 +42,7 @@ function getRandomUser(users) {
 
 function displayTheUser() {
   const randomUser = getRandomUser(prototypeUsers);
-  const currentUser = new User(randomUser.name, randomUser.id, randomUser.pantry);
+  currentUser = new User(randomUser.name, randomUser.id, randomUser.pantry);
   userName.innerText = currentUser.name;
   createRecipeBox();
   displayAllRecipes();
@@ -57,7 +61,6 @@ function createRecipeBox() {
 }
 
 function displayAllRecipes() {
-  console.log("give me my recipes!!")
   allRecipesView.innerHTML = ''
   for(var i = 0; i < recipes.length; i++) {
     let oneRecipe = recipes[i]
@@ -78,19 +81,27 @@ function displayAllRecipes() {
   } 
 }
 
-function displayPantryView() {
-  pantryView.classList.remove('hidden');
-  allRecipesView.classList.add('hidden');
-  buttonPantry.classList.add('hidden');
-  buttonAllRecipes.classList.remove('hidden');
+function displayPantryView() { //refactor if time!
+  pantryView.classList.toggle('hidden');
+  allRecipesView.classList.toggle('hidden');
+  buttonPantry.classList.toggle('hidden');
+  buttonAllRecipes.classList.toggle('hidden');
+  pantryUserName.innerText = currentUser.name;
+  diplayUserPantryIngredients();
 }
 
-function displayAllRecipesView() {
-  pantryView.classList.add('hidden');
-  allRecipesView.classList.remove('hidden');
-  buttonPantry.classList.remove('hidden');
-  buttonAllRecipes.classList.add('hidden');
+function diplayUserPantryIngredients() {
+  let ingredientNames = currentUser.pantry.getIngredientName(sampleIngredients);
+  console.log("give me my ingredients!!")
+  allPantry.innerHTML = ''
+  for(var i = 0; i < ingredientNames.length; i++) {
+    let oneIngredient = ingredientNames[i]
+    let miniIndgredientBox =
+    `
+    <li class="pantry-ingredients">${oneIngredient.name}<br>quantity: ${oneIngredient.amount}</li>
+    `
+    allPantry.innerHTML += miniIndgredientBox;
+  }
 }
-
 
 
