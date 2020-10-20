@@ -3,6 +3,8 @@ class User {
     this.name = name;
     this.id = id;
     this.pantry = new Pantry(id, pantry);
+    this.favoriteRecipes = [];
+    this.recipesToCook = [];
   }
 
   cookTheRecipe(recipe) {
@@ -13,6 +15,43 @@ class User {
       this.pantry.updatePantryQuantities(recipe);
       return "Enjoy your meal!";
     }
+  }
+
+
+  addRecipesToCook(buttons) {
+
+    return buttons.forEach((cookIcon, i) => {
+      let index = i;
+      if(cookIcon.checked) {
+        console.log(index)
+        if (!this.recipesToCook.includes(recipes[index])) {
+          this.recipesToCook.push(recipes[index])
+        };
+      } else {
+        if (this.recipesToCook.includes(recipes[index])) {
+          let unwantedRecipe = this.recipesToCook.indexOf(recipes[index])
+          this.recipesToCook.splice(unwantedRecipe, 1)
+        };
+      }
+    })
+  }
+
+  addFavoriteRecipes(buttons) {
+
+    return buttons.forEach((favIcon, i) => {
+      let index = i;
+      if(favIcon.checked) {
+        console.log(index)
+        if (!this.favoriteRecipes.includes(recipes[index])) {
+          this.favoriteRecipes.push(recipes[index])
+        };
+      } else {
+        if (this.favoriteRecipes.includes(recipes[index])) {
+          let unwantedRecipe = this.favoriteRecipes.indexOf(recipes[index])
+          this.favoriteRecipes.splice(unwantedRecipe, 1)
+        };
+      }
+    })
   }
 }
 

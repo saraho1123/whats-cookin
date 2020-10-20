@@ -26,8 +26,10 @@ let pantryIngredient = document.querySelector('.pantry-ingredients');
 let pantryUserName = document.querySelector('#pantry-user-name');
 let userChoiceBtnGroup = document.querySelector('.icon-box');
 
-var recipes = [];
-var currentUser;
+let basketOfIngredients = [];
+
+let recipes = [];
+let currentUser;
 
 //EVENT LISTENERS
 window.addEventListener('load', displayTheUser);
@@ -45,7 +47,19 @@ function displayTheUser() {
   userName.innerText = currentUser.name;
   createRecipeBox();
   displayAllRecipes();
+  createIngredientCart();
 }
+
+function createIngredientCart() {
+  return prototypeIngredients.map(ingredient => {
+    basketOfIngredients.push(new Ingredient(
+      ingredient.id,
+      ingredient.name,
+      ingredient.estimatedCostInCents,
+    ));
+  });
+}
+
 
 function createRecipeBox() {
   prototypeRecipes.forEach(recipe => {
@@ -67,12 +81,12 @@ function displayAllRecipes() {
     <section class = "recipe-card">
           <div class="icon-box">
             <label>
-              <input type="radio" name="recipe-buttons" id="chef-radio-button" class="chef-radio-button">
+              <input type="checkbox" name="recipe-buttons" id="chef-${recipe.id}" class="chef-radio-button">
               <img id="chef-icon-disabled" class="chef-icon" src="../images/chef.png" alt="chef icon unchosen">
               <img id="chef-icon-enabled" class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
             </label>
             <label>
-              <input type="radio" name="recipe-buttons" id="heart-radio-button" class="chef-radio-button">
+              <input type="checkbox" name="recipe-buttons" id="heart-${recipe.id}" class="heart-radio-button">
               <img id="heart-icon-enabled" class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
               <img id="heart-icon-disabled" class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">              </label>
           </div>
@@ -87,26 +101,28 @@ function displayAllRecipes() {
 
 function addSwitchIconToRecipe() {
   let userChoiceBtnGroup = document.querySelectorAll('div.icon-box');
-  allRecipesView.addEventListener('click', switchRadioBtnImg);
+  allRecipesView.addEventListener('click', switchCheckboxBtnImg);
 }
 
-function switchRadioBtnImg() {
-  let radioButtonCook = document.querySelectorAll('#chef-radio-button');
-  let radioButtonLike = document.querySelectorAll('#heart-radio-button');
+function switchCheckboxBtnImg() {
+  let checkButtonToCook = document.querySelectorAll('.chef-radio-button');
+  let checkButtonToFav = document.querySelectorAll('.heart-radio-button');
   let favoriteImgDisabled = document.querySelectorAll('#heart-icon-disabled');
   let favoriteImgEnabled = document.querySelectorAll('#heart-icon-enabled');
   let chefImgEnabled = document.querySelectorAll('#chef-icon-enabled');
   let chefImgDisabled = document.querySelectorAll('#chef-icon-disabled');
 
-  radioButtonCook.forEach((cookIcon, i) => {
+  checkButtonToCook.forEach((cookIcon, i) => {
     (cookIcon.checked) ? (chefImgEnabled[i].classList.remove("hidden"), chefImgDisabled[i].classList.add("hidden"))
     :(chefImgEnabled[i].classList.add("hidden"),chefImgDisabled[i].classList.remove("hidden"));
   });
 
-  radioButtonLike.forEach((likeIcon, i) => {
+  checkButtonToFav.forEach((likeIcon, i) => {
     (likeIcon.checked) ? (favoriteImgEnabled[i].classList.remove("hidden"), favoriteImgDisabled[i].classList.add("hidden"))
     :(favoriteImgEnabled[i].classList.add("hidden"),favoriteImgDisabled[i].classList.remove("hidden"));
   });
+  currentUser.addRecipesToCook(checkButtonToCook);
+  currentUser.addFavoriteRecipes(checkButtonToFav);
 };
 
 function displayPantryView() { //refactor if time!
