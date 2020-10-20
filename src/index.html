@@ -15,17 +15,44 @@
       <div id="nav-buttons">
         <button class="nav-button all-recipes-button hidden">All Recipes</button>
         <button class="nav-button pantry-button">Pantry</button>
+        <button class="nav-button filter-button">Submit Filter</button>
       </div>
       <div class="forms">
-        <span class="form-box">
-        <label class="form-titles" for="filter">Filter:</label>
-        <form action="filter by tag or type">
-          <input class="input-boxes" type="text">
-        </form>
-      </span>
+        <!-- <span class="form-box">
+          <label class="form-titles" for="filter">Filter:</label>
+          <form id="filter-box" action="filter by tag or type">
+            <input id="filter-input" class="input-boxes" type="text">
+          </form> -->
+
+         <span class="form-box">
+          <label class="form-titles" for="filter">Filter:</label>
+          <select class="filter-box input-boxes" name="">
+          </select>
+        </span>
+
+
+
+        <!-- <select class="selectpicker">
+          <optgroup label="Your Recipes">
+            <option>Favorite Recipes</option>
+            <option>Recipes To Cook</option>
+          </optgroup>
+          <optgroup label="Tags">
+            <option>Tent</option>
+            <option>Flashlight</option>
+            <option>Toilet Paper</option>
+          </optgroup>
+          <optgroup label="Recipes Types">
+            <option>Tent</option>
+            <option>Flashlight</option>
+            <option>Toilet Paper</option>
+          </optgroup>
+      </select> -->
+      <!-- </span> -->
+
       <span class="form-box">
         <label class="form-titles" for="search">Search:</label>
-        <form action="search by ingredient">
+        <form id="search-box" action="search by ingredient">
          <input class="input-boxes" type="text">
         </form>
       </span>
@@ -164,7 +191,7 @@
       </article>
 
     </main>
-
+    <script type="text/javascript" src="../data/recipes.js"></script>
     <script type="text/javascript" src="../data/test-data.js"></script>
     <script type="text/javascript" src="./User.js"></script>
     <script type="text/javascript" src="./Recipe.js"></script>

@@ -6,6 +6,7 @@ const prototypeRecipes = sampleRecipes;
 // const prototypeIngredients = recipeCards.sampleIngredients;
 const prototypeUsers = sampleUsers;
 const prototypeIngredients = sampleIngredients;
+const recipesData = recipeData;
 // const prototypeUser1 = sampleData.sampleUsers[0];
 // const prototypeUser2 = sampleData.sampleUsers[1];
 
@@ -25,16 +26,26 @@ let allPantry = document.querySelector('.ingredients');
 let pantryIngredient = document.querySelector('.pantry-ingredients');
 let pantryUserName = document.querySelector('#pantry-user-name');
 let userChoiceBtnGroup = document.querySelector('.icon-box');
+let filterBoxElement = document.querySelector('.filter-box');
+let filterButton = document.querySelector('.filter-button')
 
 let basketOfIngredients = [];
 
 let recipes = [];
 let currentUser;
+let recipesTags = [];
+let recipesTypes = [];
+
+let filterBox = {
+  tags: getAllRecipesTags(recipesData),
+  userTypes: ['Favorite Recipes', 'Recipe To Cook']
+}
 
 //EVENT LISTENERS
 window.addEventListener('load', displayTheUser);
 buttonPantry.addEventListener('click', displayPantryView);
 buttonAllRecipes.addEventListener('click', displayPantryView);
+filterButton.addEventListener('click', displayFilteredRecipes);
 
 function getRandomUser(users) {
   let randomIndex = Math.floor(Math.random() * users.length);
@@ -46,8 +57,29 @@ function displayTheUser() {
   currentUser = new User(randomUser.name, randomUser.id, randomUser.pantry);
   userName.innerText = currentUser.name;
   createRecipeBox();
-  displayAllRecipes();
+  displayAllRecipes(recipes);
   createIngredientCart();
+  getTagOptions();
+}
+
+function getAllRecipesTags(recipes) {
+  return recipes.reduce((acc, recipe) => {
+    const tags = recipe.tags.forEach(tag => {
+      if(!acc.includes(tag)) {
+        acc.push(tag);
+      }
+
+    })
+    return acc;
+  }, [])
+}
+
+function getSelectValue(values) {
+  filterBox.userTypes.forEach(keyItem => {
+    if(filterBoxElement.value === keyItem) {
+      console.log(filterBoxElement.value)
+    }
+  })
 }
 
 function createIngredientCart() {
@@ -59,7 +91,6 @@ function createIngredientCart() {
     ));
   });
 }
-
 
 function createRecipeBox() {
   prototypeRecipes.forEach(recipe => {
@@ -73,9 +104,9 @@ function createRecipeBox() {
   })
 }
 
-function displayAllRecipes() {
+function displayAllRecipes(choosenRecipes) {
   allRecipesView.innerHTML = ''
-  recipes.forEach(recipe => {
+  choosenRecipes.forEach(recipe => {
     let miniRecipe =
     `
     <section class = "recipe-card">
@@ -132,6 +163,36 @@ function displayPantryView() { //refactor if time!
   buttonAllRecipes.classList.toggle('hidden');
   pantryUserName.innerText = currentUser.name;
   diplayUserPantryIngredients();
+}
+
+function getTagOptions() {
+  let tags = filterBox.tags.concat(filterBox.userTypes);
+  filterBoxElement.innerHTML = '';
+  tags.forEach(tag => {
+    let miniTag =
+    `
+    <option value="${tag}">${tag}</option>
+    `
+    filterBoxElement.innerHTML += miniTag;
+  });
+}
+
+function displayFilteredRecipes() {
+  let tags = filterBox.tags.concat(filterBox.userTypes);
+  let userChoice = document.querySelector(".filter-box").value;
+
+  if(tags.includes(userChoice)) {
+    let filteredRecipes = recipes.filter(recipe => {
+      return recipe.tags.includes(userChoice)
+    })
+    displayAllRecipes(filteredRecipes);
+  }
+  if(userChoice === filterBox.userTypes[0]) {
+    displayAllRecipes(currentUser.favoriteRecipes);
+  }
+  if(userChoice === filterBox.userTypes[1]) {
+    displayAllRecipes(currentUser.recipesToCook);
+  }
 }
 
 function diplayUserPantryIngredients() {
