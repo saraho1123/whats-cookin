@@ -1,58 +1,50 @@
-// const chai = require("chai");
-// const expect = chai.expect;
+// -------------TEST_DATA-----------------------
+// const prototypeRecipes = sampleRecipes;
+// const prototypeUsers = sampleUsers;
+// const prototypeIngredients = sampleIngredients;
 
-// const sampleData = require('../data/test-data');
-const prototypeRecipes = sampleRecipes;
-// const prototypeIngredients = recipeCards.sampleIngredients;
-const prototypeUsers = sampleUsers;
-const prototypeIngredients = sampleIngredients;
 const recipesData = recipeData;
 const ingredientsInfo = ingredientsData;
 const usersInfo = usersData;
-// const prototypeUser1 = sampleData.sampleUsers[0];
-// const prototypeUser2 = sampleData.sampleUsers[1];
-
-// const Basket = require('./Basket');
-// const Ingredient = require('./Ingredient');
-// const Recipe = require('./Recipe');
-// const User = require('./User');
-// const Pantry = require('./Pantry')
 
 let userName = document.querySelector('#user-name');
 let allRecipesView = document.querySelector('.all-recipes');
 let pantryView = document.querySelector('.pantry');
 let singleRecipeView = document.querySelector('.single-recipe');
-let buttonPantry = document.querySelector('.pantry-button');
-let buttonAllRecipes = document.querySelector('.all-recipes-button');
 let allPantry = document.querySelector('.ingredients');
 let pantryIngredient = document.querySelector('.pantry-ingredients');
 let pantryUserName = document.querySelector('#pantry-user-name');
-let userChoiceBtnGroup = document.querySelector('.icon-box');
-let filterBoxElement = document.querySelector('.filter-box');
-let filterButton = document.querySelector('.filter-button');
-let searchButton = document.querySelector('.search-button')
 let searchBoxElement = document.querySelector('.search-box');
-let basketOfIngredients = [];
+let filterBoxElement = document.querySelector('.filter-box');
+let userChoiceBtnGroup = document.querySelector('.icon-box');
+let filterButton = document.querySelector('.filter-button');
+let searchButton = document.querySelector('.search-button');
+let buttonPantry = document.querySelector('.pantry-button');
+let buttonAllRecipes = document.querySelector('.all-recipes-button');
 
+let basketOfIngredients = [];
 let allRecipesInfo = [];
 let currentUser;
 let recipesTags = [];
 let recipesTypes = [];
 
-let filterBox = {
-  tags: getAllRecipesTags(allRecipesInfo),
-  userTypes: ['Favorite Recipes', 'Recipe To Cook'],
-  ingredients: getAllIngredients(ingredientsInfo)
-}
-
 //EVENT LISTENERS
 window.addEventListener('load', displayTheUser);
 buttonPantry.addEventListener('click', displayPantryView);
-buttonAllRecipes.addEventListener('click', displayPantryView);
+buttonAllRecipes.addEventListener('click', () => {
+  displayAllRecipesView();
+  displayAllRecipes(allRecipesInfo);
+})
+;
 filterButton.addEventListener('click', displayFilteredRecipes);
 searchButton.addEventListener('click', displaySearchRecipes);
 allRecipesView.addEventListener('click', switchToSingleRecipeView);
 
+let filterBox = {
+  userTypes: ['Favorite Recipes', 'Recipe To Cook'],
+  ingredients: getAllIngredients(ingredientsInfo)
+}
+//FUNCTIONS
 function getRandomUser(users) {
   let randomIndex = Math.floor(Math.random() * users.length);
   return users[randomIndex]
@@ -75,7 +67,6 @@ function getAllRecipesTags(recipes) {
       if(!acc.includes(tag)) {
         acc.push(tag);
       }
-
     })
     return acc;
   }, [])
@@ -102,7 +93,6 @@ function getIngredientsName(ingredientId) {
 }
 
 function displaySearchRecipes() {
-  // let tags = filterBox.tags.concat(filterBox.userTypes);
   let userChoice = document.querySelector(".search-box").value;
   let ingredientId = getIngredientsId(userChoice);
 
@@ -116,14 +106,6 @@ function displaySearchRecipes() {
     return acc;
   }, [])
   displayAllRecipes(searchedBox);
-}
-
-function getSelectValue(values) {
-  filterBox.userTypes.forEach(keyItem => {
-    if(filterBoxElement.value === keyItem) {
-      console.log(filterBoxElement.value)
-    }
-  })
 }
 
 function createIngredientCart() {
@@ -146,6 +128,7 @@ function createRecipeBox() {
       recipe.name,
       recipe.tags))
   })
+  filterBox.tags = getAllRecipesTags(allRecipesInfo);
 }
 
 function displayAllRecipes(choosenRecipes) {
@@ -174,8 +157,6 @@ function displayAllRecipes(choosenRecipes) {
   addSwitchIconToRecipe();
 }
 
-
-
 function addSwitchIconToRecipe() {
   let userChoiceBtnGroup = document.querySelectorAll('div.icon-box');
   allRecipesView.addEventListener('click', switchCheckboxBtnImg);
@@ -203,18 +184,42 @@ function switchCheckboxBtnImg() {
 };
 
 function displayPantryView() { //refactor if time!
-  pantryView.classList.toggle('hidden');
-  allRecipesView.classList.toggle('hidden');
-  buttonPantry.classList.toggle('hidden');
-  buttonAllRecipes.classList.toggle('hidden');
+  pantryView.classList.remove('hidden');
+  singleRecipeView.classList.add('hidden');
+  allRecipesView.classList.add('hidden');
+  buttonPantry.classList.add('hidden');
+  buttonAllRecipes.classList.remove('hidden');
   pantryUserName.innerText = currentUser.name;
+  filterButton.classList.add('hidden');
+  searchButton.classList.add('hidden');
   diplayUserPantryIngredients();
 }
 
+function displaySingleRecipeView(recipe) {
+  singleRecipeView.classList.remove('hidden');
+  buttonAllRecipes.classList.remove('hidden');
+  pantryView.classList.add('hidden');
+  allRecipesView.classList.add('hidden');
+  filterButton.classList.add('hidden');
+  searchButton.classList.add('hidden');
+  displaySingleRecipe(recipe);
+}
+
+function displayAllRecipesView() {
+  pantryView.classList.add('hidden');
+  singleRecipeView.classList.add('hidden');
+  allRecipesView.classList.remove('hidden');
+  buttonPantry.classList.remove('hidden');
+  buttonAllRecipes.classList.add('hidden');
+  filterButton.classList.remove('hidden');
+  searchButton.classList.remove('hidden');
+}
+
 function getTagOptions() {
-  let tags = filterBox.tags.concat(filterBox.userTypes);
+  let tags = filterBox.tags;
+  let filterBoxInfo = tags.concat(filterBox.userTypes);
   filterBoxElement.innerHTML = '';
-  tags.forEach(tag => {
+  filterBoxInfo.forEach(tag => {
     let miniTag =
     `
     <option value="${tag}">${tag}</option>
@@ -253,25 +258,19 @@ function displayFilteredRecipes() {
   }
 }
 
-function displaySingleRecipeView(recipe) {
-  singleRecipeView.classList.toggle('hidden');
-  allRecipesView.classList.toggle('hidden');
-  buttonPantry.classList.toggle('hidden');
-  buttonAllRecipes.classList.toggle('hidden');
-  displaySingleRecipe(recipe)
-}
-
 function displaySingleRecipe(recipe) {
-  recipeIngredientsList.innerHTML = "";
-  recipeDirectionsList.innerHTML = "";
   let recipeTitle = document.querySelector(".recipe-title");
   let recipeImage = document.querySelector(".single-recipe-img");
   let recipeIngredientsList = document.querySelector("#list-of-ingredients");
   let recipeDirectionsList = document.querySelector("#recipe-directions");
+  let recipeCost = document.querySelector("#recipe-price");
+
+  recipeIngredientsList.innerHTML = "";
+  recipeDirectionsList.innerHTML = "";
 
   recipeTitle.innerText = recipe.name;
   recipeImage.src = recipe.image;
-
+  recipeCost.innerText = `$${recipe.calculateTotalCost(basketOfIngredients)}`;
   recipe.ingredients.forEach(ingredient => {
     let recipeIngredientName = getIngredientsName(ingredient.id)
     let miniRecipeIngredient =
@@ -294,14 +293,15 @@ function displaySingleRecipe(recipe) {
 }
 
 function switchToSingleRecipeView() {
-  if(event.target.id) {
+  // if(event.target.id) {
     let clickedRecipe = allRecipesInfo.find(recipe => {
       return recipe.id == event.target.id;
     })
-    console.log(clickedRecipe)
-    displaySingleRecipeView(clickedRecipe);
-  }
+    if(clickedRecipe) {
+      displaySingleRecipeView(clickedRecipe);
+    }
 }
+
 
 function diplayUserPantryIngredients() {
   let ingredientNames = currentUser.pantry.getIngredientName(basketOfIngredients);

@@ -5,7 +5,3 @@ class Basket {
 }
 
 // module.exports = Basket;
-
-
-//filter or search ?
-//create a method to use the basket class

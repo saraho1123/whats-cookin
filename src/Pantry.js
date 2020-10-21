@@ -1,5 +1,3 @@
-// const Recipe = require('./Recipe');
-
 class Pantry {
   constructor(userId, userPantry) {
     this.id = userId;
@@ -47,24 +45,6 @@ class Pantry {
       })
   };
 
-  // determineAbilityToCook(recipe) {
-  //   let pantryIds = this.getPantryIds(); //ids
-  //   let ingredientsWithQuantity = this.getIngredientsWithQuantity(); //pantry ingredients
-  //   this.neededIngredients = recipe.ingredients.reduce((acc, ingredient) => {
-  //     const pantryQuantity = ingredientsWithQuantity[ingedient.id] || 0;
-  //     if (!pantryIds.includes(ingredient.id) || ingredient.quantity.amount > pantryQuantity) {
-  //       acc.push({ name: ingredient.id, amount: ingredient.quantity.amount - pantryQuantity});
-  //     }
-  //   }
-  // //
-  // //   return acc;
-  // // }, [])
-  // // };
-
-  //   addIngredientsToShoppingList()  {
-  //
-  // }
-
   updatePantryQuantities(recipe) {
     let pantryIds = this.getPantryIds();
     let ingredientsWithQuantity = this.getIngredientsWithQuantity();
@@ -78,7 +58,6 @@ class Pantry {
         return { ingredient: ingredient.id, amount: pantryQuantity - ingredient.quantity.amount };
       });
   };
-
-};
+}
 
 // module.exports = Pantry;

@@ -24,7 +24,10 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5vw;
+  font-size: 1.1vw;
+  text-align: center;
+  height: 2em;
+  padding: 0.2em;
 }
 
 nav {
@@ -55,6 +58,7 @@ nav {
   margin: 0em 0.2em 0.2em 0.2em;
   display: flex;
   align-items: center;
+  width: 32vw;
 }
 
 .form-titles {
@@ -77,12 +81,16 @@ header {
 
 #nav-buttons {
   margin: 0.8em 1em 1em 1em;
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-button {
   width: 7em;
   border: 0;
   border-radius: 1em;
+  margin-right: 1em;
+  font-size: 1vw;
 }
 
 .nav-button:hover {
@@ -110,6 +118,7 @@ header {
   justify-content: center;
   margin: 2em 1em;
   width: 20%;
+  height: 100%;
   border-radius: 15px;
 
 }
@@ -145,7 +154,7 @@ header {
   align-items: center;
   flex-direction: row;
   opacity: 1;
-  top: 14%;
+  top: 4vw;
   height: 10%;
 }
 
@@ -288,10 +297,11 @@ li {
     font-size: 0.9em;
   }
   h2 {
-    font-size: 0.5em;
+    font-size: 1vw;
     margin: 1.0vw 0.2vw 1vw 0.1vw;
     padding: 0em 0.2em 0 0.2em;
     text-align: center;
+    padding: 0.2em;
   }
   h3 {
     font-size: 0.65em;
@@ -328,7 +338,14 @@ li {
   }
   #nav-buttons {
     margin: 0em 1em 0em 1em;
+    display: flex;
+    flex-direction: column;
   }
+  .nav-button {
+    font-size: 1vw;
+    margin: 0.4em
+  }
+
   .single-recipe-img {
     width: 71%;
   }

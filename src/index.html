@@ -7,10 +7,9 @@
     <title>Whats Cookin</title>
   </head>
   <body>
-
     <nav>
       <div class="greeting">
-        <h1>Howdy <span id="user-name">Olga and Sarah!</span> What do you want to cook today?</h1>
+        <h1>Howdy <span id="user-name"></span> What do you want to cook today?</h1>
       </div>
       <div id="nav-buttons">
         <button class="nav-button all-recipes-button hidden">All Recipes</button>
@@ -19,37 +18,11 @@
         <button class="nav-button search-button">Submit Search</button>
       </div>
       <div class="forms">
-        <!-- <span class="form-box">
-          <label class="form-titles" for="filter">Filter:</label>
-          <form id="filter-box" action="filter by tag or type">
-            <input id="filter-input" class="input-boxes" type="text">
-          </form> -->
-
          <span class="form-box">
           <label class="form-titles" for="filter">Filter:</label>
           <select class="filter-box input-boxes" name="">
           </select>
         </span>
-
-
-
-        <!-- <select class="selectpicker">
-          <optgroup label="Your Recipes">
-            <option>Favorite Recipes</option>
-            <option>Recipes To Cook</option>
-          </optgroup>
-          <optgroup label="Tags">
-            <option>Tent</option>
-            <option>Flashlight</option>
-            <option>Toilet Paper</option>
-          </optgroup>
-          <optgroup label="Recipes Types">
-            <option>Tent</option>
-            <option>Flashlight</option>
-            <option>Toilet Paper</option>
-          </optgroup>
-      </select> -->
-      <!-- </span> -->
       <span class="form-box">
        <label class="form-titles" for="filter">Search:</label>
        <select class="search-box input-boxes" name="">
@@ -57,89 +30,16 @@
      </span>
       </div>
     </nav>
-
     <header>
         <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png">
     </header>
-
     <main>
       <article class="all-recipes">
-        <!-- <section class="recipe-card">
-          <div class="icon-box">
-            <label>
-              <input type="radio" name="recipe-buttons" id="chef-radio-button" class="chef-radio-button">
-              <img id="chef-icon-disabled" class="chef-icon" src="../images/chef.png" alt="chef icon unchosen">
-              <img id="chef-icon-enabled" class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
-            </label>
-            <label>
-              <input type="radio" name="recipe-buttons" id="heart-radio-button" class="chef-radio-button">
-              <img id="heart-icon-enabled" class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
-              <img id="heart-icon-disabled" class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
-            </label>
-          </div>
-          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
-          <h2>Recipe Title</h2>
-        </section>
-        <section class = "recipe-card">
-          <div class="icon-box">
-            <img class="chef-icon" src="../images/chef.png" alt="chef icon unchosen">
-            <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
-            <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
-            <img class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
-
-          </div>
-          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
-          <h2>Recipe Title</h2>
-        </section>
-        <section class = "recipe-card">
-          <div class="icon-box">
-            <label>
-              <input type="radio" name="recipe-buttons" id="chef-radio-button" class="chef-radio-button">
-              <img id="chef-icon-disabled" class="chef-icon" src="../images/chef.png" alt="chef icon unchosen">
-              <img id="chef-icon-enabled" class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
-            </label>
-            <label>
-              <input type="radio" name="recipe-buttons" id="heart-radio-button" class="chef-radio-button">
-              <img id="heart-icon-enabled" class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
-              <img id="heart-icon-disabled" class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
-            </label>
-          </div>
-          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
-          <h2>Recipe Title</h2>
-        </section>
-        <section class = "recipe-card">
-          <div class="icon-box">
-            <label>
-              <input type="radio" name="recipe-buttons" id="chef-radio-button" class="chef-radio-button">
-              <img id="chef-icon-disabled" class="chef-icon" src="../images/chef.png" alt="chef icon unchosen">
-              <img id="chef-icon-enabled" class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
-            </label>
-            <label>
-              <input type="radio" name="recipe-buttons" id="heart-radio-button" class="chef-radio-button">
-              <img id="heart-icon-enabled" class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
-              <img id="heart-icon-disabled" class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
-            </label>
-          </div>
-          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
-          <h2>Recipe Title</h2>
-        </section>
-        <section class = "recipe-card">
-          <div class="icon-box">
-            <img class="chef-icon"src="../images/chef.png" alt="chef icon unchosen">
-            <img class="chef-icon hidden" src="../images/chef-solid.png" alt="chef icon chosen">
-            <img class="heart-icon hidden" src="../images/favorite.svg" alt="heart icon chosen">
-            <img class="heart-icon" src="../images/favorite_border.svg" alt="heart icon unchosen">
-
-          <!- </div>
-          <img class="recipe-card-img" src="https://spoonacular.com/recipeImages/595736-556x370.jpg" alt="recipe image">
-          <h2>Recipe Title</h2>
-        </section> -->
       </article>
-
       <article class="single-recipe hidden">
-        <!-- <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png" alt="What's Cooking title"> -->
-        <img class="single-recipe-img" src="https://spoonacular.com/recipeImages/678353-556x370.jpg" alt="Current Chosen Recipe">
+        <img class="single-recipe-img" src="" alt="Current Chosen Recipe">
         <h2 class="recipe-title">Recipe Title</h2>
+        <span id="recipe-price">Price</span>
         <div class="recipe-info-box">
           <div class="recipe-details">
             <section class="ingredients-section">
@@ -154,15 +54,12 @@
           </section>
           </div>
         </div>
-
       </article>
-
       <article class = "pantry hidden">
           <h2 class="recipe-title"><span id="pantry-user-name">User</span>'s Pantry</h2>
             <ul class="ingredients">
             </ul>
       </article>
-
     </main>
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="../data/ingredients.js"></script>
