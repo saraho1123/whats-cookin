@@ -27,6 +27,10 @@ let allRecipesInfo = [];
 let currentUser;
 let recipesTags = [];
 let recipesTypes = [];
+let filterBox = {
+  userTypes: ['Favorite Recipes', 'Recipe To Cook'],
+  ingredients: getAllIngredients(ingredientsInfo)
+}
 
 //EVENT LISTENERS
 window.addEventListener('load', displayTheUser);
@@ -34,24 +38,20 @@ buttonPantry.addEventListener('click', displayPantryView);
 buttonAllRecipes.addEventListener('click', () => {
   displayAllRecipesView();
   displayAllRecipes(allRecipesInfo);
-})
-;
+});
+
 filterButton.addEventListener('click', displayFilteredRecipes);
 searchButton.addEventListener('click', displaySearchRecipes);
 allRecipesView.addEventListener('click', switchToSingleRecipeView);
 
-let filterBox = {
-  userTypes: ['Favorite Recipes', 'Recipe To Cook'],
-  ingredients: getAllIngredients(ingredientsInfo)
-}
 //FUNCTIONS
-function getRandomUser(users) {
-  let randomIndex = Math.floor(Math.random() * users.length);
-  return users[randomIndex]
+function getRandomItem(items) {
+  let randomIndex = Math.floor(Math.random() * items.length);
+  return items[randomIndex]
 }
 
 function displayTheUser() {
-  const randomUser = getRandomUser(usersInfo);
+  const randomUser = getRandomItem(usersInfo);
   currentUser = new User(randomUser.name, randomUser.id, randomUser.pantry);
   userName.innerText = currentUser.name;
   createRecipeBox();
@@ -183,40 +183,59 @@ function switchCheckboxBtnImg() {
   currentUser.addFavoriteRecipes(checkButtonToFav);
 };
 
-function displayPantryView() { // Refactor if time!
-  pantryView.classList.remove('hidden');
-  singleRecipeView.classList.add('hidden');
-  allRecipesView.classList.add('hidden');
-  buttonPantry.classList.add('hidden');
-  buttonAllRecipes.classList.remove('hidden');
+function removeHTMLClasses() {
+
+}
+
+function changeClassProperty(elements) {
+  elements.forEach(element => {
+    element.add ? (element.name).classList.add('hidden') : (element.name).classList.remove('hidden')
+  })
+}
+
+function displayPantryView() { 
+  const properties = [ 
+    {name: pantryView, add: false},
+    {name: singleRecipeView, add: true},
+    {name: allRecipesView, add: true},
+    {name: buttonPantry, add: true},
+    {name: buttonAllRecipes, add: false},
+    {name: filterButton, add: true},
+    {name: searchButton, add: true},
+  ]
   pantryUserName.innerText = currentUser.name;
-  filterButton.classList.add('hidden');
-  searchButton.classList.add('hidden');
+  changeClassProperty(properties);
   diplayUserPantryIngredients();
 }
 
 function displaySingleRecipeView(recipe) {
-  singleRecipeView.classList.remove('hidden');
-  buttonAllRecipes.classList.remove('hidden');
-  pantryView.classList.add('hidden');
-  allRecipesView.classList.add('hidden');
-  filterButton.classList.add('hidden');
-  searchButton.classList.add('hidden');
+  const properties = [
+    {name: singleRecipeView, add: false},
+    {name: buttonAllRecipes, add: false},
+    {name: pantryView, add: true},
+    {name: allRecipesView, add: true},
+    {name: filterButton, add: true},
+    {name: searchButton, add: true},
+  ]
+  changeClassProperty(properties);
   displaySingleRecipe(recipe);
 }
 
 function displayAllRecipesView() {
-  pantryView.classList.add('hidden');
-  singleRecipeView.classList.add('hidden');
-  allRecipesView.classList.remove('hidden');
-  buttonPantry.classList.remove('hidden');
-  buttonAllRecipes.classList.add('hidden');
-  filterButton.classList.remove('hidden');
-  searchButton.classList.remove('hidden');
+  const properties = [
+    {name: pantryView, add: true},
+    {name: singleRecipeView, add: true},
+    {name: allRecipesView, add: false},
+    {name: buttonPantry, add: false},
+    {name: buttonAllRecipes, add: false},
+    {name: filterButton, add: false},
+    {name: searchButton, add: false},
+  ]
+  changeClassProperty(properties);
 }
 
 function getTagOptions() {
-  let tags = filterBox.tags;
+  let tags = sortItemsAlphabetically(filterBox.tags);
   let filterBoxInfo = tags.concat(filterBox.userTypes);
   filterBoxElement.innerHTML = '';
   filterBoxInfo.forEach(tag => {
@@ -228,8 +247,16 @@ function getTagOptions() {
   });
 }
 
+function sortItemsAlphabetically(values) {
+  let sortedValues = values.sort((a, b) => {
+    return a.toLowerCase() < b.toLowerCase() ? -1 : 1;
+  })
+  return sortedValues;
+}
+
 function getSearchOptions() {
-  let ingredientsToSearch = filterBox.ingredients;
+  let ingredientsToSearch = sortItemsAlphabetically(filterBox.ingredients);
+  console.log(ingredientsToSearch)
   searchBoxElement.innerHTML = '';
   ingredientsToSearch.forEach(ingredient => {
     let miniIngredient =
