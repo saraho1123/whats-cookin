@@ -6,7 +6,7 @@ class Recipe {
     this.instructions = instructions,
     this.name = name,
     this.tags = tags
-  };
+  }
 
   getIngredientWithPrices(basket) {
     let ingredientsWithPrices = basket.filter(ingredient => {

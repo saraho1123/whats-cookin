@@ -31,21 +31,21 @@ class Pantry {
   }
 
   determineAbilityToCook(recipe) {
-    let pantryIds = this.getPantryIds();//refactor?
-    let ingredientsWithQuantity = this.getIngredientsWithQuantity();//refactor?
+    let pantryIds = this.getPantryIds();// Refactor if time!
+    let ingredientsWithQuantity = this.getIngredientsWithQuantity();// Refactor if time!
 
     this.neededIngredients = recipe.ingredients
       .filter(ingredient => {
-        const pantryQuantity = ingredientsWithQuantity[ingredient.id] || 0; //refactor?
+        const pantryQuantity = ingredientsWithQuantity[ingredient.id] || 0; // Refactor if time!
         return (!pantryIds.includes(ingredient.id) || ingredient.quantity.amount > pantryQuantity)
       })
       .map(ingredient => {
-        const pantryQuantity = ingredientsWithQuantity[ingredient.id] || 0;//refactor?
+        const pantryQuantity = ingredientsWithQuantity[ingredient.id] || 0;// Refactor if time!
         return { name: ingredient.id, amount: ingredient.quantity.amount - pantryQuantity };
       })
-  };
+  }
 
-  updatePantryQuantities(recipe) {
+  updatePantryQuantities(recipe) {// Refactor if time!
     let pantryIds = this.getPantryIds();
     let ingredientsWithQuantity = this.getIngredientsWithQuantity();
     this.pantry = recipe.ingredients
@@ -57,7 +57,7 @@ class Pantry {
         const pantryQuantity = ingredientsWithQuantity[ingredient.id] || 0;
         return { ingredient: ingredient.id, amount: pantryQuantity - ingredient.quantity.amount };
       });
-  };
+  }
 }
 
 // module.exports = Pantry;

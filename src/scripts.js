@@ -183,7 +183,7 @@ function switchCheckboxBtnImg() {
   currentUser.addFavoriteRecipes(checkButtonToFav);
 };
 
-function displayPantryView() { //refactor if time!
+function displayPantryView() { // Refactor if time!
   pantryView.classList.remove('hidden');
   singleRecipeView.classList.add('hidden');
   allRecipesView.classList.add('hidden');
@@ -258,7 +258,7 @@ function displayFilteredRecipes() {
   }
 }
 
-function displaySingleRecipe(recipe) {
+function displaySingleRecipe(recipe) { // Refactor if time!
   let recipeTitle = document.querySelector(".recipe-title");
   let recipeImage = document.querySelector(".single-recipe-img");
   let recipeIngredientsList = document.querySelector("#list-of-ingredients");

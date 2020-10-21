@@ -5,7 +5,7 @@ class  Ingredient {
     this.estimatedCostInCents = cost
   }
 
-  calculateIngredientCost(amount) {
+  calculateIngredientCost(amount) { // Refactor if time! (not used!)
     return this.amount = amount * this.estimatedCostInCents;
   }
 }

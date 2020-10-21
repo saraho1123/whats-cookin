@@ -9,7 +9,7 @@ class User {
 
   cookTheRecipe(recipe) {
     this.pantry.determineAbilityToCook(recipe);
-    if(this.pantry.neededIngredients > 0) {
+    if (this.pantry.neededIngredients > 0) {
       return "You need to go shopping!";
     } else {
       this.pantry.updatePantryQuantities(recipe);
@@ -20,7 +20,7 @@ class User {
   addRecipesToCook(buttons) {
     return buttons.forEach((cookIcon, i) => {
       let index = i;
-      if(cookIcon.checked) {
+      if (cookIcon.checked) {
         if (!this.recipesToCook.includes(recipesData[index])) {
           this.recipesToCook.push(recipesData[index]);
         }
@@ -36,7 +36,7 @@ class User {
   addFavoriteRecipes(buttons) {
     return buttons.forEach((favIcon, i) => {
       let index = i;
-      if(favIcon.checked) {
+      if (favIcon.checked) {
         if (!this.favoriteRecipes.includes(recipesData[index])) {
           this.favoriteRecipes.push(recipesData[index]);
         }
