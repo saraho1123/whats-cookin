@@ -80,7 +80,7 @@ const sampleRecipes = [{
     ],
     "name": "Salad",
     "tags": [
-      "antipasti",
+      "dinner",
       "starter",
     ]
   }
@@ -163,4 +163,3 @@ let sampleUsers = [
 //  sampleIngredients,
 //  sampleUsers
 //  }
-

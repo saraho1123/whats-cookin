@@ -24,7 +24,10 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.1vw;
+  text-align: center;
+  height: 2em;
+  padding: 0.2em;
 }
 
 nav {
@@ -54,6 +57,8 @@ nav {
 .form-box {
   margin: 0em 0.2em 0.2em 0.2em;
   display: flex;
+  align-items: center;
+  width: 32vw;
 }
 
 .form-titles {
@@ -76,12 +81,16 @@ header {
 
 #nav-buttons {
   margin: 0.8em 1em 1em 1em;
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-button {
   width: 7em;
   border: 0;
   border-radius: 1em;
+  margin-right: 1em;
+  font-size: 1vw;
 }
 
 .nav-button:hover {
@@ -109,6 +118,7 @@ header {
   justify-content: center;
   margin: 2em 1em;
   width: 20%;
+  height: 100%;
   border-radius: 15px;
 
 }
@@ -132,16 +142,23 @@ header {
   top: -9999px;
 }
 
-.recipe-card:hover .recipe-card-img {
-  opacity: 0.5;
-  cursor: pointer;
-}
-
 .recipe-card:hover {
   box-shadow: 0px 0px 10px #A23939;
 }
 
 .recipe-card:hover div.icon-box {
+  position: relative;
+  display: flex;
+  height: 10px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  opacity: 1;
+  top: 4vw;
+  height: 10%;
+}
+
+label {
   position: relative;
   display: flex;
   height: 10px;
@@ -156,9 +173,35 @@ header {
 .heart-icon {
   position: absolute;
   height: auto;
-  width: 2.5em;
+  width: 2.7em;
   margin: 0px 1.5em 0 -5em;
 }
+
+.chef-radio-button  {
+  opacity: 0;
+  position: absolute;
+  width: 10.5em;
+  height: 3em;
+  margin: 0 0em 0em 2.5em;
+  top: auto;
+  width: 4em;
+  left: 0em;
+}
+.heart-radio-button {
+    opacity: 0;
+    position: absolute;
+    width: 10.5em;
+    height: 2.8em;
+    margin: 0 0em 0em 2.5em;
+    top: auto;
+    width: 2.4em;
+    right: 3.2em;
+}
+
+[type=checkbox] + img#chef-icon-disabled {
+  cursor: pointer;
+}
+
 .chef-icon {
   position: absolute;
   width: 2.5em;
@@ -239,14 +282,26 @@ li {
   height: 50%;
 }
 
+@media only screen and (max-width: 600px) {
+  nav {
+    font-size: 2vw;
+  }
 
-@media only screen and (max-width: 850px) {
+  .nav-button {
+    font-size: 1vw;
+    width: 8em;
+  }
+}
+@media only screen and (max-width: 920px) {
   h1 {
     font-size: 0.9em;
   }
   h2 {
-    font-size: 0.8em;
-    margin: 1.5em 0 2em 0em;
+    font-size: 1vw;
+    margin: 1.0vw 0.2vw 1vw 0.1vw;
+    padding: 0em 0.2em 0 0.2em;
+    text-align: center;
+    padding: 0.2em;
   }
   h3 {
     font-size: 0.65em;
@@ -265,16 +320,32 @@ li {
     margin: 1em 0em 0em 0em;
   }
   .heart-icon {
-    width: 1.5em;
-    margin: 0 1.5em 0 -3em;
+    width: 1.8em;
+    margin: 0.5em 1.5em 0 -2.8em;
   }
   .chef-icon {
     width: 1.5em;
-    margin: 0 0em 0em 1.5em;
+    margin: 0.5em 0em 0em 1.4em;
+  }
+  .chef-radio-button{
+    position: absolute;
+    width: 2em;
+    left: -0.8em;
+  }
+  .heart-radio-button{
+    width: 1.7em;
+    right: 1.65em;
   }
   #nav-buttons {
     margin: 0em 1em 0em 1em;
+    display: flex;
+    flex-direction: column;
   }
+  .nav-button {
+    font-size: 1vw;
+    margin: 0.4em
+  }
+
   .single-recipe-img {
     width: 71%;
   }
