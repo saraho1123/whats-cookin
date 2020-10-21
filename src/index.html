@@ -16,6 +16,7 @@
         <button class="nav-button all-recipes-button hidden">All Recipes</button>
         <button class="nav-button pantry-button">Pantry</button>
         <button class="nav-button filter-button">Submit Filter</button>
+        <button class="nav-button search-button">Submit Search</button>
       </div>
       <div class="forms">
         <!-- <span class="form-box">
@@ -49,13 +50,11 @@
           </optgroup>
       </select> -->
       <!-- </span> -->
-
       <span class="form-box">
-        <label class="form-titles" for="search">Search:</label>
-        <form id="search-box" action="search by ingredient">
-         <input class="input-boxes" type="text">
-        </form>
-      </span>
+       <label class="form-titles" for="filter">Search:</label>
+       <select class="search-box input-boxes" name="">
+       </select>
+     </span>
       </div>
     </nav>
 
@@ -144,31 +143,13 @@
         <div class="recipe-info-box">
           <div class="recipe-details">
             <section class="ingredients-section">
-              <h3>Ingredients</h3>
-              <ul>
-                <li>
-                  <span class="recipe-page-list-font">ingredient</span>
-                  <span class="recipe-page-list-font">amount</span>
-                  <span class="recipe-page-list-font">cost</span>
-                </li>
-                <li>
-                  <span class="recipe-page-list-font">ingredient</span>
-                  <span class="recipe-page-list-font">amount</span>
-                  <span class="recipe-page-list-font">cost</span>
-                </li>
-                <li>
-                  <span class="recipe-page-list-font">ingredient</span>
-                  <span class="recipe-page-list-font">amount</span>
-                  <span class="recipe-page-list-font">cost</span>
-                </li>
+              <h3 id="recipe-ingredients">Ingredients</h3>
+              <ul id="list-of-ingredients">
               </ul>
           </section>
           <section class="directions-section">
             <h3>Directions</h3>
-            <ol>
-              <li>stuff</li>
-              <li>more stuff</li>
-              <li>last stuff</li>
+            <ol id="recipe-directions">
             </ol>
           </section>
           </div>
@@ -179,18 +160,12 @@
       <article class = "pantry hidden">
           <h2 class="recipe-title"><span id="pantry-user-name">User</span>'s Pantry</h2>
             <ul class="ingredients">
-              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
-              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
-              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
-              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
-              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
-              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
-              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
-              <li class="pantry-ingredients">food <br>quantity: 5cups</li>
             </ul>
       </article>
 
     </main>
+    <script type="text/javascript" src="../data/users.js"></script>
+    <script type="text/javascript" src="../data/ingredients.js"></script>
     <script type="text/javascript" src="../data/recipes.js"></script>
     <script type="text/javascript" src="../data/test-data.js"></script>
     <script type="text/javascript" src="./User.js"></script>
