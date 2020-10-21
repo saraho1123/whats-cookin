@@ -1,51 +1,51 @@
-# What's Cookin'? Starter Kit 
+# What's Cookin' - Turing Mod 2 Group Project
 
-The details of this project are outlined in the <a href="https://frontend.turing.io/projects/whats-cookin.html" target="\__blank">project spec</a>.
+### The Link to our github pages can be found here:
+https://saraho1123.github.io/whats-cookin/
 
-## Set Up 
+### The link to our repo can be found there:
+https://github.com/saraho1123/whats-cookin
 
-1. Within your group, decide on one person to have the project repository on their Github account. This person will *fork* this repository - on the top right corner of the page, click the fork button. 
-2. Both group members should then clone down the forked repository (make sure that everyone is added as a collaborator as well). Since you don't want your project to be named "whats-cookin-starter-kit", add an optional argument after the repo url when cloning. The command should look like this: `git clone [remote-address] [what you want to name the repo]`.
-3. Once you have cloned the repo, change into the directory and install the project dependencies. Run npm install to install project dependencies.
-4. Run open src/index.html in the terminal to see the HTML page (you should see some boilerplate HTML displayed on the page)
-5. Make sure both members of your team are collaborators on the forked repo.
+### The link to the project description can be found here:
+https://frontend.turing.io/projects/whats-cookin.html
 
-## Testing 
-
-There is no boilerplate for testing in this starter-kit repo. You will need to set this up yourself. However, if you ran npm install, then the tooling you need to start testing is already installed (mocha and chai).
-
-## Linting Your Code 
-
-Run the command in your terminal npm run lint to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit, but that's ok - the linter is still running successfully.
-
-Your linter will look only at the JavaScript files you have within the src and the test directories.
+## Project Overview
+This project we created a recipe tracking/meal planning application. Our app's functionality included a user being able to: choosing and view their favorite recipes, choosing and viewing recipes to cook, filtering recipes by type, ingredients favorites and recipes to cook, as well as plan what items the user would need to buy (based on what ingredients the recipe calls for and what the user 'has' in their pantry).
 
 
-## Data Model
-### Users
-```js
-{
-  "id": [number],
-  "name": [string],
-  "pantry": [array of objects with amount and ingredient id properties]
-},
-```
 
-### Recipes
-```js
-{
-  "ingredients" [array of objects with ingredients ids(connection to ingredients), ingredient names, and quantity data],
-  "instructions": [array of objects with instructions properties and numbered steps],
-  "name": [string],
-  "tags": [array of strings representing info about the recipes]
-}
-```
+## Goals
+Our personal goals were to get better at sad path TDD, get a lot more comfortable with the array prototypes, and integrate what we’ve learned about JS so far. This was one of our first projects using TDD and ES6 JavaScript. We also wanted to work together in such a way that we would be willing to work together again!
 
-### Ingredients
-```js
-{
-  "estimatedCostInCents": [number],
-  "id": [number -- connection to users and recipes],
-  "name": [string]
-}
-```
+## Technologies
+JavaScript (ES6)
+HTML
+CSS
+dev tools
+Adobe????
+
+## Challenges
+Our first big challenge was deciding how many Classes to include. We started with three, increased to six and ended up with five. After getting into our project, we realized that having a way to 'clean up' and organize our data would have been helpful. Although we didn't get to it for this project, it was a big learning opportunity for the future! One thing we wish we had more time for was more TDD. Although we included it, we did not test for edge cases or for 'breaking' our code.
+
+## Wins
+We overcame some personal things while tackling this project. Although it definitely slowed us down, we are very proud of the work we were able to accomplish! 
+
+We also made our app responsive, which was a fun win!
+
+## ScreenShots
+Home view of recipes (only shows the 8 at the top):
+![screenshot-home-view](https://user-images.githubusercontent.com/62810592/96782297-d85cd100-13b2-11eb-9cd5-8f2e78fe5f48.png)
+
+Pantry view of the user's available ingredients for cooking:
+![screenshot-pantry-view](https://user-images.githubusercontent.com/62810592/96782337-dabf2b00-13b2-11eb-96ba-6b40197e03ef.png)
+
+Single recipe view of recipe image, title and cost of ingredients to cook this recipe:
+![screenshot-single-recipe-view-1](https://user-images.githubusercontent.com/62810592/96782389-ddba1b80-13b2-11eb-9850-bdffc7ce98e2.png)
+
+Single recipe view of ingredient list and directions to cook this recipe:
+![screenshot-single-recipe-view-2](https://user-images.githubusercontent.com/62810592/96782414-deeb4880-13b2-11eb-8d76-4999ed7ad6b4.png)
+
+
+## Credits
+Olga Morgan: https://github.com/scripka
+Sarah Osgood: https://github.com/saraho1123
