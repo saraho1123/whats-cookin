@@ -24,11 +24,20 @@
 
 ## Project Overview
 
-This project we created a recipe tracking/meal planning application. Our app's functionality included a user being able to: choosing and view their favorite recipes, choosing and viewing recipes to cook, filtering recipes by type, ingredients favorites and recipes to cook, as well as plan what items the user would need to buy (based on what ingredients the recipe calls for and what the user 'has' in their pantry).
+For this project we created a recipe tracking/meal planning application. 
+
+Our app's functionality included a user being able to: 
+
+* choose and view their favorite recipes
+* choose and view recipes to cook
+* filter recipes by type, ingredients, 'favorites' or 'recipes to cook'
+* plan what items the user would need to purchase in order to cook their chosen recipe (based on what ingredients the recipe calls for and what the user 'has' in their pantry)
 
 ## Goals
 
-Our personal goals were to get better at sad path TDD, get a lot more comfortable with the array prototypes, and integrate what we’ve learned about JS so far. This was one of our first projects using TDD and ES6 JavaScript. We also wanted to work together in such a way that we would be willing to work together again!
+Our personal goals were to get better at sad path TDD, get a lot more comfortable with the array prototypes, and integrate what we’ve learned about JS so far. This was one of our first projects using TDD and ES6 JavaScript. 
+
+We also wanted to work together in such a way that we would be willing to work together again!
 
 ## Technologies And Tools
 
@@ -36,16 +45,17 @@ Our personal goals were to get better at sad path TDD, get a lot more comfortabl
 * HTML
 * CSS
 * Adobe XD
+* Google Jam Board
 
 ## Challenges
 
-Our first big challenge was deciding how many Classes to include. We started with three, increased to six and ended up with five. After getting into our project, we realized that having a way to 'clean up' and organize our data would have been helpful. Although we didn't get to it for this project, it was a big learning opportunity for the future! One thing we wish we had more time for was more TDD. Although we included it, we did not test for edge cases or for 'breaking' our code.
+Our first big challenge was deciding how many Classes to include. We started with three, increased to six and ended up with five. After getting into our project, we realized that having a way to 'clean up' and organize our data would have been helpful. Although we didn't get to it for this project, it was a big learning opportunity for the future! Another thing we wish we had more time for was more TDD. Although we included it, we did not test for edge cases or for 'breaking' our code.
 
 ## Wins
 
-We overcame some personal things while tackling this project. Although it definitely slowed us down, we are very proud of the work we were able to accomplish in such a short time!
+We overcame some personal things while tackling this project. Although it definitely slowed us down, we are proud of the work we were able to accomplish in such a short time, including being able to complete nearly all the required funcionality for this project.
 
-We also made our app responsive, which was a fun win!
+We did make our app responsive, which was a fun win!
 
 ## ScreenShots and Demos
 
@@ -60,7 +70,7 @@ We also made our app responsive, which was a fun win!
 <details>
   <summary>**Under the Hood**</summary>
 
-All recipes are genereted on load event. To display all recipes from the recipes.js data file we used `forEach` method to loop through the each recipe and created an html element:
+All recipes are genereted on load event. To display all recipes from the recipes.js data file we used `forEach` method to loop through the each recipe and create an html element:
 
 ```javaScript
 
@@ -94,14 +104,14 @@ All recipes are genereted on load event. To display all recipes from the recipes
 <details>
   <summary>**Under the Hood**</summary>
 
-A single recipe view dipslay individual recipe with the following information:
+A single recipe view dipslays the individual recipe with the following information:
 
 * Image
 * Total cost of all ingredients
 * Ingredients names and the amount
 * Directions
 
-All information is easlily pulled by accessing the Recipe instace. Each recipe has the following strcuture:
+All information is easlily pulled by accessing the Recipe instance. Each recipe has the following structure:
 
 ```javaScript
 
@@ -117,7 +127,7 @@ class Recipe {
 
 ```
 
-Knowing the recipe the total cost can be easily calculated using created methods inside the recipe class `calculateTotalCost(basket)` where 'basket' is the array of all the ingredients.
+When you choose a recipe, the total cost of cooking that recipe can be easily calculated using methods inside the recipe class `calculateTotalCost(basket)` where 'basket' is the array of all the ingredients.
 
 </details>
 
@@ -146,7 +156,7 @@ class Pantry {
 
 ```
 
-Pantry has several methods that allow to determine the amount of ingredients left after cooking the recipes, however, these methods are not currently available. In the future we are planning to add this feature to our website so the users can see how many ingredients they have left and how many they need to buy in order to cook the chosen recipes.
+Pantry has several methods that allow the user to determine the amount of ingredients left after cooking the recipes, however, these methods are not currently available. In the future we are planning to add this feature to our website so the users can see how many ingredients they have left and how many they need to buy in order to cook the chosen recipes.
 
 </details>
 
@@ -155,8 +165,8 @@ Pantry has several methods that allow to determine the amount of ingredients lef
 ## Roadmap
 
 * Add a feature to see how many ingredients are left after cooking a recipe
-* Ability to have a wallet that shows the amount users would like to spend
-* Have an opportunity to create a personal account to store all favorite and ready to cook recipes
+* Ability to have a wallet that shows the amount users have available to spend on purchasing ingredients
+* Have an opportunity to create a personal account to store all 'favorite' and 'ready to cook' recipes
 
 ## Credits
 
