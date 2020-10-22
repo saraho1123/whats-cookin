@@ -1,4 +1,4 @@
-class  Ingredient {
+class Ingredient {
   constructor(id, name, cost) {
     this.id = id,
     this.name = name,

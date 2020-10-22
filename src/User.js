@@ -30,7 +30,7 @@ class User {
           this.recipesToCook.splice(unwantedRecipe, 1);
         }
       }
-    })
+    });
   }
 
   addFavoriteRecipes(buttons) {
@@ -46,7 +46,7 @@ class User {
           this.favoriteRecipes.splice(unwantedRecipe, 1);
         }
       }
-    })
+    });
   }
 }
 

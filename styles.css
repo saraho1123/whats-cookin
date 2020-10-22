@@ -251,7 +251,6 @@ li {
   height: 1000px;
   display: flex;
   justify-content: flex-end;
-  
   width: 100%;
 }
 
@@ -259,7 +258,6 @@ li {
   background-color: #A23939;
   padding: 1em 0em 1em 2em;
   color: white;
-  /* height: fit-content; */
   width: 50%;
 }
 
@@ -269,7 +267,6 @@ li {
   border-style: solid;
   border-color: #A23939;
   background-color: white;
-  /* height: fit-content; */
   width: 50%;
 }
 
@@ -304,10 +301,12 @@ li {
     width: 8em;
   }
 }
+
 @media only screen and (max-width: 920px) {
   h1 {
     font-size: 0.9em;
   }
+
   h2 {
     font-size: 1vw;
     margin: 1.0vw 0.2vw 1vw 0.1vw;
@@ -315,44 +314,54 @@ li {
     text-align: center;
     padding: 0.2em;
   }
+
   h3 {
     font-size: 0.65em;
   }
+
   .forms {
     flex-direction: column;
     align-items: flex-end;
     font-size: 0.8em;
   }
+
   .whats-cooking-logo {
     width: 13em;
     height: 5em;
     margin-top: 7em;
   }
+
   .recipe-card {
     margin: 1em 0em 0em 0em;
   }
+
   .heart-icon {
     width: 1.8em;
     margin: 0.5em 1.5em 0 -2.8em;
   }
+
   .chef-icon {
     width: 1.5em;
     margin: 0.5em 0em 0em 1.4em;
   }
+
   .chef-radio-button{
     position: absolute;
     width: 2em;
     left: -0.8em;
   }
+
   .heart-radio-button{
     width: 1.7em;
     right: 1.65em;
   }
+
   #nav-buttons {
     margin: 0em 1em 0em 1em;
     display: flex;
     flex-direction: column;
   }
+
   .nav-button {
     font-size: 1vw;
     margin: 0.4em
@@ -361,6 +370,7 @@ li {
   .single-recipe-img {
     width: 71%;
   }
+
   li{
     font-size: 0.65em;
   }

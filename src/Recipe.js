@@ -10,7 +10,7 @@ class Recipe {
 
   getIngredientWithPrices(basket) {
     let ingredientsWithPrices = basket.filter(ingredient => {
-          return this.ingredients.find(recipeIngredient => recipeIngredient.id === ingredient.id)
+          return this.ingredients.find(recipeIngredient => recipeIngredient.id === ingredient.id);
         });
     return ingredientsWithPrices;
   }
