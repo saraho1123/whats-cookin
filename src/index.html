@@ -9,56 +9,50 @@
   <body>
     <nav>
       <div class="greeting">
-        <h1>Howdy <span id="user-name"></span> What do you want to cook today?</h1>
+        <h1>Howdy <span id="user-name"></span>, what do you want to cook today?</h1>
       </div>
       <div id="nav-buttons">
-        <button class="nav-button all-recipes-button hidden">All Recipes</button>
+        <button class="nav-button all-recipes-button">All Recipes</button>
         <button class="nav-button pantry-button">Pantry</button>
         <button class="nav-button filter-button">Submit Filter</button>
         <button class="nav-button search-button">Submit Search</button>
       </div>
       <div class="forms">
-         <span class="form-box">
+        <span class="form-box">
           <label class="form-titles" for="filter">Filter:</label>
-          <select class="filter-box input-boxes" name="">
-          </select>
+          <select class="filter-box input-boxes" name=""></select>
         </span>
-      <span class="form-box">
-       <label class="form-titles" for="filter">Search:</label>
-       <select class="search-box input-boxes" name="">
-       </select>
-     </span>
+        <span class="form-box">
+          <label class="form-titles" for="filter">Search:</label>
+          <select class="search-box input-boxes" name=""></select>
+        </span>
       </div>
     </nav>
     <header>
-        <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png">
+      <img class="whats-cooking-logo" src="../images/Whats-Cooking-Logo.png">
     </header>
     <main>
-      <article class="all-recipes">
-      </article>
+      <article class="all-recipes"></article>
       <article class="single-recipe hidden">
         <img class="single-recipe-img" src="" alt="Current Chosen Recipe">
-        <h2 class="recipe-title">Recipe Title</h2>
-        <span id="recipe-price">Price</span>
+        <h2 class="recipe-title" id="single-recipe-title">Recipe Title</h2>
+        <p>Cost for recipe ingredients:</p>  <span id="recipe-price">Price</span>
         <div class="recipe-info-box">
           <div class="recipe-details">
             <section class="ingredients-section">
               <h3 id="recipe-ingredients">Ingredients</h3>
-              <ul id="list-of-ingredients">
-              </ul>
-          </section>
-          <section class="directions-section">
-            <h3>Directions</h3>
-            <ol id="recipe-directions">
-            </ol>
-          </section>
+              <ul id="list-of-ingredients"></ul>
+            </section>
+            <section class="directions-section">
+              <h3>Directions</h3>
+              <ol id="recipe-directions"></ol>
+            </section>
           </div>
         </div>
       </article>
       <article class = "pantry hidden">
-          <h2 class="recipe-title"><span id="pantry-user-name">User</span>'s Pantry</h2>
-            <ul class="ingredients">
-            </ul>
+        <h2 class="recipe-title"><span id="pantry-user-name">User</span>'s Pantry</h2>
+        <ul class="ingredients"></ul>
       </article>
     </main>
     <script type="text/javascript" src="../data/users.js"></script>
